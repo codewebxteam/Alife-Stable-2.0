@@ -16,7 +16,7 @@ interface HeroProps {
 
 export function Hero({ onOpenDemo, onOpenPartner }: HeroProps) {
   return (
-    <section id="home" className="relative w-full overflow-hidden flex items-start md:items-center bg-transparent">
+    <section id="home" className="relative w-full overflow-hidden min-h-[540px] sm:min-h-[640px] lg:min-h-[720px] flex items-start md:items-center bg-transparent">
       {/* Background Image Container (100% Transparent Overlays - Pure Background Image) */}
       <div className="absolute inset-0 z-0">
         {/* Desktop Image: Professional Handshake by the Window */}
@@ -45,7 +45,7 @@ export function Hero({ onOpenDemo, onOpenPartner }: HeroProps) {
       </div>
 
       {/* Hero Content Layer - 100% Transparent, No Background Overlays */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-3 pb-8 sm:py-10 lg:py-14">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-80 sm:py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
           {/* Left Text Column */}
           <div className="lg:col-span-8 xl:col-span-7 bg-transparent">
@@ -110,7 +110,7 @@ export function Hero({ onOpenDemo, onOpenPartner }: HeroProps) {
                   key={badge}
                   className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-white/80 border border-[#078765]/20 text-[#064E43] text-[11px] sm:text-xs font-semibold shadow-2xs backdrop-blur-xs"
                 >
-                  <CheckIcon className="w-3 h-3 text-[#078765]" />
+                  <CheckIcon className="w-3.5 h-3.5 text-[#078765]" />
                   {badge}
                 </span>
               ))}
