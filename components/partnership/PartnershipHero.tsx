@@ -12,7 +12,7 @@ interface PartnershipHeroProps {
 
 export function PartnershipHero({ onOpenDemo, onOpenPartner }: PartnershipHeroProps) {
   return (
-    <section className="relative w-full overflow-hidden min-h-[600px] lg:min-h-[680px] flex items-center bg-[#FBF7EF]">
+    <section className="relative w-full overflow-hidden min-h-[520px] sm:min-h-[600px] lg:min-h-[680px] flex items-start sm:items-center bg-[#FBF7EF]">
       {/* Background Graphic Handshake Image */}
       <div className="absolute inset-0 z-0">
         <div className="hidden md:block absolute inset-0 w-full h-full">
@@ -41,9 +41,9 @@ export function PartnershipHero({ onOpenDemo, onOpenPartner }: PartnershipHeroPr
         </div>
       </div>
 
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-6 pb-72 sm:py-16 lg:py-20">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
-          <div className="lg:col-span-8 space-y-6">
+          <div className="lg:col-span-8 space-y-4 sm:space-y-6">
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F4EC] border border-[#078765]/20 text-[#078765] text-xs font-bold uppercase tracking-wider shadow-2xs">
               <span className="w-2 h-2 rounded-full bg-[#078765] animate-pulse" />
@@ -51,7 +51,7 @@ export function PartnershipHero({ onOpenDemo, onOpenPartner }: PartnershipHeroPr
             </div>
 
             {/* Main Title */}
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#102B2B] tracking-tight leading-[1.15]">
+            <h1 className="text-2xl sm:text-5xl lg:text-6xl font-extrabold text-[#102B2B] tracking-tight leading-[1.15]">
               Build & Scale Your Branded Course Business{" "}
               <span className="text-[#078765] inline-block relative">
                 with Alife Stable
@@ -72,13 +72,13 @@ export function PartnershipHero({ onOpenDemo, onOpenPartner }: PartnershipHeroPr
               </span>
             </h1>
 
-            {/* Subheading */}
-            <p className="text-base sm:text-lg text-[#65736F] leading-relaxed max-w-2xl">
+            {/* Subheading - Hidden on mobile/phone view */}
+            <p className="hidden sm:block text-base sm:text-lg text-[#65736F] leading-relaxed max-w-2xl">
               Launch your own branded academy with ready-to-sell AI & digital courses, a personal domain, full admin controls, and complete tech support. You focus on learners — we handle the technology.
             </p>
 
-            {/* Dual CTAs in Hero */}
-            <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 pt-2">
+            {/* Dual CTAs in Hero - Hidden on mobile/phone view, user has fixed MobileStickyCta */}
+            <div className="hidden sm:flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 pt-2">
               <button
                 type="button"
                 onClick={onOpenPartner}
@@ -97,8 +97,8 @@ export function PartnershipHero({ onOpenDemo, onOpenPartner }: PartnershipHeroPr
               </button>
             </div>
 
-            {/* Trust Highlights */}
-            <div className="flex flex-wrap gap-2.5 pt-2">
+            {/* Trust Highlights - Hidden on mobile/phone view */}
+            <div className="hidden sm:flex flex-wrap gap-2.5 pt-2">
               {[
                 "100% White-Label Platform",
                 "Zero Course Creation Required",
