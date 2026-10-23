@@ -1,6 +1,14 @@
 // Centralized Asset URLs and Data Configurations for Alife Stable
 
 export const IMAGE_ASSETS = {
+  // Hero marketing growth blueprint image (right side hero illustration)
+  heroBlueprint:
+    "https://ik.imagekit.io/0s0fb4b2b/Alife%20Stable/Marketing%20Growth%20Blueprint.webp",
+
+  // Partnership hero illustration (right side graphic)
+  partnershipGrowth:
+    "https://ik.imagekit.io/0s0fb4b2b/Alife%20Stable/Growth%20Through%20Partnership.webp",
+
   // Desktop hero background: Professionals shaking hands in a modern office
   desktopHeroBg:
     "https://ik.imagekit.io/0s0fb4b2b/Alife%20Stable/Professional%20Handshake%20by%20the%20Window.webp",
@@ -136,7 +144,7 @@ export const WHAT_YOU_GET_ITEMS = [
 export const YOUR_ACADEMY_CHECKLIST = [
   "Your Own Domain & Logo",
   "Your Branding, Your Identity",
-  "Fully Customized Website & App",
+  "Fully Customized Website & Web App",
   "Showcase Your Courses",
   "Build Your Own Student Community",
 ];

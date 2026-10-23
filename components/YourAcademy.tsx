@@ -24,7 +24,7 @@ export function YourAcademy({ onOpenPartner }: YourAcademyProps) {
               Launch Your Own Learning Platform Under Your Brand
             </h2>
 
-            <p className="text-base sm:text-lg text-[#65736F] leading-relaxed">
+            <p className="text-sm sm:text-base text-[#102B2B] font-medium leading-relaxed">
               We set up a fully branded platform for you — with your logo, domain, brand name, and customizations. It looks and feels like your own academy.
             </p>
 

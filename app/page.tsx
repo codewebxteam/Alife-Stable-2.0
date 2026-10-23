@@ -55,8 +55,11 @@ export default function HomePage() {
           onOpenDemo={handleOpenDemo}
         />
 
-        {/* 4. What You Get with 12 comprehensive benefit cards & benefit strip */}
-        <WhatYouGet />
+        {/* 4. Starting Alone vs. Partnering with Alife Stable Comparison Cards */}
+        <WhatYouGet
+          onOpenDemo={handleOpenDemo}
+          onOpenPartner={handleOpenPartner}
+        />
 
         {/* 5. Your Academy, Your Brand with Learning Platform Mockup & checklist */}
         <YourAcademy

@@ -31,7 +31,7 @@ export function FaqSection({ onOpenDemo }: FaqSectionProps) {
               Got Questions? We&apos;ve Got Answers.
             </h2>
 
-            <p className="text-xs sm:text-sm text-[#65736F] leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#1C3B37] font-medium leading-relaxed">
               Find answers to common questions about our partnership program. Still need clarity? Our advisory team is always happy to assist.
             </p>
 
@@ -53,7 +53,7 @@ export function FaqSection({ onOpenDemo }: FaqSectionProps) {
               <h3 className="text-xs sm:text-sm font-bold text-[#102B2B] mb-0.5">
                 Have a specific question?
               </h3>
-              <p className="text-xs text-[#65736F] mb-2.5">
+              <p className="text-xs text-[#1C3B37] mb-2.5">
                 Our support team is ready to assist you directly.
               </p>
               <button
@@ -93,7 +93,7 @@ export function FaqSection({ onOpenDemo }: FaqSectionProps) {
                   </button>
 
                   {isOpen && (
-                    <div className="px-3.5 sm:px-4 pb-3.5 sm:pb-4 pt-0 text-xs sm:text-sm text-[#65736F] leading-relaxed border-t border-[#078765]/10 mt-1">
+                    <div className="px-3.5 sm:px-4 pb-3.5 sm:pb-4 pt-0 text-xs sm:text-sm text-[#1C3B37] leading-relaxed border-t border-[#078765]/10 mt-1">
                       {item.answer}
                     </div>
                   )}

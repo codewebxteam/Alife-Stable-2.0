@@ -23,7 +23,7 @@ export function Pricing({ onOpenDemo, onOpenPartner }: PricingProps) {
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#102B2B] tracking-tight mb-2">
             Simple & Transparent Partnership Plan
           </h2>
-          <p className="text-xs sm:text-sm text-[#65736F] leading-relaxed">
+          <p className="text-xs sm:text-sm text-[#1C3B37] font-medium leading-relaxed">
             One comprehensive plan. Everything included to start, run, and scale your online course business.
           </p>
         </div>
@@ -43,7 +43,7 @@ export function Pricing({ onOpenDemo, onOpenPartner }: PricingProps) {
                   <h3 className="text-xl sm:text-2xl font-bold text-[#102B2B] mb-0.5">
                     {plan.name}
                   </h3>
-                  <p className="text-xs text-[#65736F] leading-relaxed">
+                  <p className="text-xs text-[#1C3B37] leading-relaxed">
                     {plan.description}
                   </p>
                 </div>
@@ -53,7 +53,7 @@ export function Pricing({ onOpenDemo, onOpenPartner }: PricingProps) {
                     <span className="text-3xl sm:text-4xl font-extrabold text-[#078765]">
                       {plan.price}
                     </span>
-                    <span className="text-xs font-semibold text-[#65736F]">
+                    <span className="text-xs font-semibold text-[#1C3B37]">
                       {plan.period}
                     </span>
                   </div>
@@ -105,8 +105,8 @@ export function Pricing({ onOpenDemo, onOpenPartner }: PricingProps) {
         </div>
 
         {/* Small Trust Note */}
-        <p className="text-center text-[11px] text-[#65736F]">
-          Commercial partnership terms governed by official platform agreement. Direct payouts with no course-sale royalties.
+        <p className="text-center text-xs text-[#102B2B] font-medium">
+          Commercial partnership terms governed by official platform agreement. Direct payouts with zero course-sale royalties.
         </p>
       </div>
     </section>

@@ -99,6 +99,17 @@ export default function CourseDetailsPage() {
     return [];
   }, [course?.demoVideos]);
 
+  const courseThumbnail = useMemo(() => {
+    if (course?.image && !course.image.includes("placehold.co")) {
+      return course.image;
+    }
+    const vid = course?.mainVideoId || course?.videoId;
+    if (vid) {
+      return `https://img.youtube.com/vi/${vid}/hqdefault.jpg`;
+    }
+    return course?.image || "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80";
+  }, [course?.image, course?.mainVideoId, course?.videoId]);
+
   const handleOpenDemo = () => {
     setModalType("demo");
     setIsDemoModalOpen(true);
@@ -306,7 +317,47 @@ export default function CourseDetailsPage() {
             {/* Right Column: Sticky Partner Access & Curriculum Info (No Price, No Buy Now) */}
             <div className="lg:col-span-4">
               <div className="lg:sticky lg:top-24 space-y-6">
-                <div className="bg-white rounded-3xl p-6 sm:p-7 border-2 border-[#078765]/20 shadow-md space-y-5">
+                <div className="bg-white rounded-3xl p-5 sm:p-6 border-2 border-[#078765]/20 shadow-md space-y-5">
+                  {/* Course Thumbnail Preview */}
+                  <div
+                    className={`relative aspect-video w-full rounded-2xl overflow-hidden bg-[#102B2B] border border-[#078765]/20 shadow-xs group ${
+                      course.mainVideoId || course.videoId ? "cursor-pointer" : ""
+                    }`}
+                    onClick={() => {
+                      const vid = course.mainVideoId || course.videoId;
+                      if (vid) {
+                        openPlayer([{ videoId: vid, title: course.title || "Course Preview" }]);
+                      }
+                    }}
+                  >
+                    <img
+                      src={courseThumbnail}
+                      alt={course.title || "Course Thumbnail"}
+                      className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                      onError={(e) => {
+                        const target = e.currentTarget;
+                        const vid = course.mainVideoId || course.videoId;
+                        if (vid && !target.src.includes("hqdefault.jpg")) {
+                          target.src = `https://img.youtube.com/vi/${vid}/hqdefault.jpg`;
+                        } else {
+                          target.src = "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80";
+                        }
+                      }}
+                    />
+                    {(course.mainVideoId || course.videoId) && (
+                      <div className="absolute inset-0 bg-black/25 group-hover:bg-black/35 transition-colors flex items-center justify-center">
+                        <div className="w-12 h-12 rounded-full bg-white/95 backdrop-blur-xs flex items-center justify-center text-[#078765] shadow-lg group-hover:scale-110 transition-transform">
+                          <PlayCircle className="w-7 h-7 text-[#078765]" />
+                        </div>
+                      </div>
+                    )}
+                    {course.category && (
+                      <span className="absolute top-2.5 left-2.5 px-2.5 py-1 rounded-md bg-[#102B2B]/85 backdrop-blur-xs text-[10px] font-bold text-white tracking-wide uppercase border border-white/10 shadow-xs">
+                        {course.category}
+                      </span>
+                    )}
+                  </div>
+
                   <div className="space-y-2">
                     <span className="px-3 py-1 rounded-full bg-[#E8F4EC] text-[#078765] text-xs font-bold uppercase tracking-wider inline-block">
                       Partner Curriculum
@@ -321,19 +372,19 @@ export default function CourseDetailsPage() {
 
                   {/* Included Highlights */}
                   <div className="space-y-2.5 pt-2 border-t border-gray-100 text-xs">
-                    <div className="flex items-center gap-2 text-[#102B2B]">
+                    <div className="flex items-center gap-2 text-[#102B2B] font-semibold">
                       <CheckCircle2 className="w-4 h-4 text-[#078765] shrink-0" />
                       <span>Full White-Label Commercial License</span>
                     </div>
-                    <div className="flex items-center gap-2 text-[#102B2B]">
+                    <div className="flex items-center gap-2 text-[#102B2B] font-semibold">
                       <CheckCircle2 className="w-4 h-4 text-[#078765] shrink-0" />
                       <span>Sell Under Your Own Brand & Domain</span>
                     </div>
-                    <div className="flex items-center gap-2 text-[#102B2B]">
+                    <div className="flex items-center gap-2 text-[#102B2B] font-semibold">
                       <CheckCircle2 className="w-4 h-4 text-[#078765] shrink-0" />
                       <span>Retain 100% of Course Profits</span>
                     </div>
-                    <div className="flex items-center gap-2 text-[#102B2B]">
+                    <div className="flex items-center gap-2 text-[#102B2B] font-semibold">
                       <CheckCircle2 className="w-4 h-4 text-[#078765] shrink-0" />
                       <span>Regular Curriculum & Video Updates</span>
                     </div>

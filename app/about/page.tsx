@@ -53,7 +53,7 @@ export default function AboutPage() {
     { value: "1000+", label: "Ready-to-Sell Courses", highlight: "AI & Emerging Tech Catalog" },
     { value: "500+", label: "Active Partners", highlight: "Educators & Institutes Pan-India" },
     { value: "100%", label: "Direct Profit Retention", highlight: "Zero Marketplace Royalty Cuts" },
-    { value: "48-72h", label: "Turnkey Go-Live", highlight: "Domain & Platform Handover" },
+    { value: "12-24h", label: "Turnkey Go-Live", highlight: "Domain & Platform Handover" },
   ];
 
   const corePillars = [
@@ -108,7 +108,7 @@ export default function AboutPage() {
     {
       feature: "Go-to-Market Speed",
       traditional: "Months of delays before welcoming your first paying student",
-      alife: "Turnkey delivery within 48 to 72 hours, fully configured and operational",
+      alife: "Turnkey delivery within 12 to 24 hrs, fully configured and operational",
     },
   ];
 

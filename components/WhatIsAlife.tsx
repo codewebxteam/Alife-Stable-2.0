@@ -27,8 +27,8 @@ export function WhatIsAlife({ onOpenDemo }: WhatIsAlifeProps) {
               A Complete Solution to Launch Your Own Online Course Business
             </h2>
 
-            <p className="text-base sm:text-lg text-[#65736F] leading-relaxed">
-              Alife Stable helps individuals, educators, institutes, and entrepreneurs start their own branded online learning platform with high-quality, ready-made courses. You get the platform, courses, support, and everything you need — without creating content or managing complicated technology.
+            <p className="text-sm sm:text-base text-[#102B2B] leading-relaxed font-medium">
+              Start your branded online learning business with ready-to-sell courses, turnkey platform setup, and full support — zero content creation or tech skills required.
             </p>
 
             <div className="pt-2">
@@ -70,7 +70,7 @@ export function WhatIsAlife({ onOpenDemo }: WhatIsAlifeProps) {
                     <h4 className="text-xs sm:text-sm font-bold text-[#102B2B] leading-tight">
                       {item.title}
                     </h4>
-                    <p className="text-[11px] text-[#65736F] mt-0.5 leading-snug">
+                    <p className="text-[11px] text-[#1A3835] mt-0.5 leading-snug font-medium">
                       {item.desc}
                     </p>
                   </div>

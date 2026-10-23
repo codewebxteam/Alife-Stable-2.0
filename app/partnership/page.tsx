@@ -4,8 +4,8 @@ import React, { useState } from "react";
 import { Header } from "../../components/Header";
 import { PartnershipHero } from "../../components/partnership/PartnershipHero";
 import { PartnershipVideo } from "../../components/partnership/PartnershipVideo";
-import { WhatYouGet } from "../../components/WhatYouGet";
 import { LaunchInSteps } from "../../components/partnership/LaunchInSteps";
+import { RevenueCalculator } from "../../components/partnership/RevenueCalculator";
 import { Pricing } from "../../components/Pricing";
 import { TechEcosystem } from "../../components/partnership/TechEcosystem";
 import { Testimonials } from "../../components/Testimonials";
@@ -54,13 +54,16 @@ export default function PartnershipPage() {
           onOpenPartner={handleOpenPartner}
         />
 
-        {/* Section 3: What You Get (12 Comprehensive Deliverables) */}
-        <WhatYouGet />
-
-        {/* Section 4: Launch in Steps (4 Turnkey Phases with Mid-Page CTAs) */}
+        {/* Section 3: Launch in Steps (4 Turnkey Phases with Mid-Page CTAs) */}
         <LaunchInSteps
           onOpenDemo={handleOpenDemo}
           onOpenPartner={handleOpenPartner}
+        />
+
+        {/* Section 4: Interactive Revenue & Profit Calculator (Boosts Sales & Demonstrates ROI) */}
+        <RevenueCalculator
+          onOpenPartner={handleOpenPartner}
+          onOpenDemo={handleOpenDemo}
         />
 
         {/* Section 5: Partnership Price Details (All-In-One Plan at ₹1,999/yr) */}
