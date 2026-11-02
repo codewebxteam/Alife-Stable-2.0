@@ -6,6 +6,7 @@ import {
   IMAGE_ASSETS,
   BRAND_INFO,
   HERO_FLOATING_BENEFITS,
+  DEMO_CALENDAR_URL,
 } from "./constants";
 import { ArrowRightIcon, CheckIcon } from "./Icons";
 
@@ -66,14 +67,15 @@ export function Hero({ onOpenDemo, onOpenPartner }: HeroProps) {
 
             {/* Single High-Conversion Primary CTA Button */}
             <div className="hidden sm:flex flex-row items-center gap-4 mb-6 sm:mb-8">
-              <button
-                type="button"
-                onClick={onOpenDemo}
+              <a
+                href={DEMO_CALENDAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl font-extrabold text-white bg-[#078765] hover:bg-[#064E43] shadow-lg hover:shadow-xl transition-all duration-200 text-base sm:text-lg cursor-pointer active:scale-98"
               >
                 Book your free demo slot
                 <ArrowRightIcon className="w-5 h-5" />
-              </button>
+              </a>
             </div>
 
             {/* Floating Benefit Badges */}

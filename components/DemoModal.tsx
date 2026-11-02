@@ -3,6 +3,7 @@
 import React, { useState, useEffect } from "react";
 import { CloseIcon, CheckIcon } from "./Icons";
 import { Calendar, ChevronDown, Check, Clock } from "lucide-react";
+import { DEMO_CALENDAR_URL } from "./constants";
 import { db } from "../lib/firebase";
 import {
   collection,
@@ -229,9 +230,30 @@ export function DemoModal({ isOpen, onClose }: DemoModalProps) {
             <h3 className="text-2xl sm:text-2xl font-black text-[#102B2B] mb-1 tracking-tight">
               Book Your Free Demo Slot
             </h3>
-            <p className="text-xs sm:text-sm text-[#65736F] mb-4 leading-relaxed">
+            <p className="text-xs sm:text-sm text-[#65736F] mb-3 leading-relaxed">
               Choose your preferred time slot and enter your contact details. Our product specialist will walk you through the platform live.
             </p>
+
+            {/* Direct Google Calendar Booking Banner */}
+            <div className="mb-4 p-3 rounded-2xl bg-[#E8F4EC] border border-[#078765]/20 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-2xs">
+              <div className="space-y-0.5">
+                <div className="text-xs font-bold text-[#102B2B] flex items-center gap-1.5">
+                  <Calendar className="w-3.5 h-3.5 text-[#078765]" />
+                  Official Google Calendar Appointment
+                </div>
+                <p className="text-[11px] text-[#65736F]">
+                  Instantly pick a slot on Google Calendar with automated Google Meet link.
+                </p>
+              </div>
+              <a
+                href={DEMO_CALENDAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-3.5 py-2 rounded-xl text-xs font-bold text-white bg-[#078765] hover:bg-[#064E43] transition-colors text-center shrink-0 shadow-xs"
+              >
+                Open Google Calendar →
+              </a>
+            </div>
 
             {error && (
               <div className="mb-4 p-2.5 rounded-xl bg-red-50 border border-red-200 text-red-700 text-xs font-medium">

@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { IMAGE_ASSETS, BRAND_INFO } from "../constants";
+import { IMAGE_ASSETS, BRAND_INFO, DEMO_CALENDAR_URL } from "../constants";
 import { ArrowRightIcon, CheckIcon } from "../Icons";
 
 interface PartnershipHeroProps {
@@ -57,14 +57,15 @@ export function PartnershipHero({ onOpenDemo, onOpenPartner }: PartnershipHeroPr
 
             {/* Single CTA in Hero */}
             <div className="hidden sm:flex flex-row items-center gap-4 pt-1">
-              <button
-                type="button"
-                onClick={onOpenDemo}
+              <a
+                href={DEMO_CALENDAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base cursor-pointer active:scale-98"
               >
                 Book your free demo slot
                 <ArrowRightIcon className="w-4 h-4" />
-              </button>
+              </a>
             </div>
 
             {/* Trust Highlights */}

@@ -11,6 +11,7 @@ import { DemoModal } from "../../../components/DemoModal";
 import CourseHero from "../../../components/course-details/CourseHero";
 import Curriculum from "../../../components/course-details/Curriculum";
 import CourseVideoPlayer from "../../../components/CourseVideoPlayer";
+import { DEMO_CALENDAR_URL } from "../../../components/constants";
 import {
   Loader2,
   FileText,
@@ -111,8 +112,7 @@ export default function CourseDetailsPage() {
   }, [course?.image, course?.mainVideoId, course?.videoId]);
 
   const handleOpenDemo = () => {
-    setModalType("demo");
-    setIsDemoModalOpen(true);
+    window.open("https://calendar.app.google/w8U4onynW6fhNAvo7", "_blank", "noopener,noreferrer");
   };
 
   const handleOpenPartner = () => {
@@ -392,13 +392,14 @@ export default function CourseDetailsPage() {
 
                   {/* Actions (Single CTA) */}
                   <div className="pt-2">
-                    <button
-                      type="button"
-                      onClick={handleOpenDemo}
-                      className="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-[#078765] hover:bg-[#064E43] shadow-md transition-all cursor-pointer text-center active:scale-98"
+                    <a
+                      href={DEMO_CALENDAR_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-[#078765] hover:bg-[#064E43] shadow-md transition-all cursor-pointer text-center active:scale-98 block"
                     >
                       Book your free demo slot
-                    </button>
+                    </a>
                   </div>
 
                   <div className="flex items-center justify-center gap-2 text-[11px] text-[#65736F] pt-1">

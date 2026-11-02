@@ -1,5 +1,7 @@
 // Centralized Asset URLs and Data Configurations for Alife Stable
 
+export const DEMO_CALENDAR_URL = "https://calendar.app.google/w8U4onynW6fhNAvo7";
+
 export const IMAGE_ASSETS = {
   // Hero marketing growth blueprint image (right side hero illustration)
   heroBlueprint:

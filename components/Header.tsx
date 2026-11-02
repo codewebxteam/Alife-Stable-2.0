@@ -4,6 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandLogoMark, MenuIcon, CloseIcon } from "./Icons";
+import { DEMO_CALENDAR_URL } from "./constants";
 
 interface HeaderProps {
   onOpenDemo: () => void;
@@ -122,24 +123,26 @@ export function Header({ onOpenDemo, onOpenPartner }: HeaderProps) {
 
           {/* Desktop Right Single CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <button
-              type="button"
-              onClick={onOpenDemo}
-              className="px-5 py-2.5 text-sm font-bold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer active:scale-95"
+            <a
+              href={DEMO_CALENDAR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-5 py-2.5 text-sm font-bold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer active:scale-95 inline-flex items-center gap-2"
             >
               Book your free demo slot
-            </button>
+            </a>
           </div>
 
           {/* Mobile Hamburger Button */}
           <div className="flex lg:hidden items-center gap-2">
-            <button
-              type="button"
-              onClick={onOpenDemo}
+            <a
+              href={DEMO_CALENDAR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="hidden sm:inline-flex text-xs font-bold text-white bg-[#078765] px-3 py-1.5 rounded-lg hover:bg-[#064E43] shadow-xs cursor-pointer"
             >
               Book your free demo slot
-            </button>
+            </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -178,16 +181,15 @@ export function Header({ onOpenDemo, onOpenPartner }: HeaderProps) {
               })}
             </nav>
             <div className="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-2.5">
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenDemo();
-                }}
-                className="w-full py-3 text-center text-sm font-bold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl shadow-sm cursor-pointer"
+              <a
+                href={DEMO_CALENDAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-3 text-center text-sm font-bold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl shadow-sm cursor-pointer block"
               >
                 Book your free demo slot
-              </button>
+              </a>
             </div>
           </div>
         )}

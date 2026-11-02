@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Image from "next/image";
-import { FAQ_ITEMS, IMAGE_ASSETS } from "./constants";
+import { FAQ_ITEMS, IMAGE_ASSETS, DEMO_CALENDAR_URL } from "./constants";
 import { PlusIcon, MinusIcon } from "./Icons";
 
 interface FaqSectionProps {
@@ -56,13 +56,14 @@ export function FaqSection({ onOpenDemo }: FaqSectionProps) {
               <p className="text-xs text-[#1C3B37] mb-2.5">
                 Our support team is ready to assist you directly.
               </p>
-              <button
-                type="button"
-                onClick={onOpenDemo}
-                className="w-full text-center py-2.5 px-4 rounded-xl bg-[#078765] hover:bg-[#064E43] text-white text-xs sm:text-sm font-bold shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer active:scale-98"
+              <a
+                href={DEMO_CALENDAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full text-center py-2.5 px-4 rounded-xl bg-[#078765] hover:bg-[#064E43] text-white text-xs sm:text-sm font-bold shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer active:scale-98 block"
               >
                 Book your free demo slot
-              </button>
+              </a>
             </div>
           </div>
 

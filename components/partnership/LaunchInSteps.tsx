@@ -11,6 +11,7 @@ import {
   CheckCircle2,
   Sparkles,
 } from "lucide-react";
+import { DEMO_CALENDAR_URL } from "../constants";
 
 interface LaunchInStepsProps {
   onOpenDemo: () => void;
@@ -175,14 +176,15 @@ export function LaunchInSteps({ onOpenDemo, onOpenPartner }: LaunchInStepsProps)
           </div>
 
           <div className="flex items-center justify-center shrink-0 w-full sm:w-auto">
-            <button
-              type="button"
-              onClick={onOpenDemo}
+            <a
+              href={DEMO_CALENDAR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
               className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-[#064E43] bg-white hover:bg-[#E8F4EC] transition-all cursor-pointer shadow-md active:scale-98"
             >
               Book your free demo slot
               <ArrowRight className="w-4 h-4" />
-            </button>
+            </a>
           </div>
         </div>
       </div>

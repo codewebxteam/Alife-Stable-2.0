@@ -2,7 +2,7 @@
 
 import React from "react";
 import { BrandLogoMark } from "./Icons";
-import { BRAND_INFO } from "./constants";
+import { BRAND_INFO, DEMO_CALENDAR_URL } from "./constants";
 
 interface FooterProps {
   onOpenDemo: () => void;
@@ -35,13 +35,14 @@ export function Footer({ onOpenDemo, onOpenPartner }: FooterProps) {
             </p>
 
             <div className="flex items-center gap-3 pt-2">
-              <button
-                type="button"
-                onClick={onOpenDemo}
-                className="text-xs font-bold px-4 py-2 rounded-xl bg-[#078765] text-white hover:bg-[#064E43] transition-colors cursor-pointer shadow-sm"
+              <a
+                href={DEMO_CALENDAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs font-bold px-4 py-2 rounded-xl bg-[#078765] text-white hover:bg-[#064E43] transition-colors cursor-pointer shadow-sm inline-flex items-center gap-1.5"
               >
                 Book your free demo slot
-              </button>
+              </a>
             </div>
           </div>
 

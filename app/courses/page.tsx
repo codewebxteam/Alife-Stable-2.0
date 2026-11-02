@@ -17,7 +17,7 @@ export default function CoursesPage() {
   });
 
   const handleOpenDemo = () => {
-    setModalState({ isOpen: true, type: "demo" });
+    window.open("https://calendar.app.google/w8U4onynW6fhNAvo7", "_blank", "noopener,noreferrer");
   };
 
   const handleOpenPartner = () => {

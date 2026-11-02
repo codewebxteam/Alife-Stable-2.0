@@ -12,6 +12,7 @@ import {
   ArrowRightIcon,
   CheckIcon,
 } from "../../components/Icons";
+import { DEMO_CALENDAR_URL } from "../../components/constants";
 import {
   Mail,
   Phone,
@@ -50,7 +51,7 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleOpenDemo = () => {
-    setModalState({ isOpen: true, type: "demo" });
+    window.open("https://calendar.app.google/w8U4onynW6fhNAvo7", "_blank", "noopener,noreferrer");
   };
 
   const handleOpenPartner = () => {
@@ -204,13 +205,14 @@ export default function ContactPage() {
 
                   {/* Fast Action Button */}
                   <div className="pt-2 border-t border-[#078765]/15">
-                    <button
-                      type="button"
-                      onClick={handleOpenDemo}
-                      className="w-full py-2.5 px-3 rounded-xl font-bold text-xs text-center text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer shadow-sm active:scale-98"
+                    <a
+                      href={DEMO_CALENDAR_URL}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="w-full py-2.5 px-3 rounded-xl font-bold text-xs text-center text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer shadow-sm active:scale-98 block"
                     >
                       Book your free demo slot
-                    </button>
+                    </a>
                   </div>
                 </div>
 

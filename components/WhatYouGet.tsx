@@ -2,6 +2,7 @@
 
 import React from "react";
 import { CheckCircle2, XCircle } from "lucide-react";
+import { DEMO_CALENDAR_URL } from "./constants";
 
 interface WhatYouGetProps {
   onOpenPartner?: () => void;
@@ -149,13 +150,14 @@ export function WhatYouGet({ onOpenPartner, onOpenDemo }: WhatYouGetProps) {
         {/* Mid-Page Call to Action */}
         <div className="mt-5 sm:mt-6 text-center">
           <div className="inline-flex items-center justify-center">
-            <button
-              type="button"
-              onClick={onOpenDemo}
-              className="w-full sm:w-auto px-7 py-3 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md transition-all cursor-pointer text-xs sm:text-sm active:scale-98"
+            <a
+              href={DEMO_CALENDAR_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full sm:w-auto px-7 py-3 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md transition-all cursor-pointer text-xs sm:text-sm active:scale-98 inline-block"
             >
               Book your free demo slot
-            </button>
+            </a>
           </div>
         </div>
       </div>

@@ -2,10 +2,11 @@
 
 import React from "react";
 import { ArrowRightIcon } from "./Icons";
+import { DEMO_CALENDAR_URL } from "./constants";
 
 interface CtaBannerProps {
-  onOpenDemo: () => void;
-  onOpenPartner: () => void;
+  onOpenDemo?: () => void;
+  onOpenPartner?: () => void;
 }
 
 export function CtaBanner({ onOpenDemo, onOpenPartner }: CtaBannerProps) {
@@ -31,13 +32,14 @@ export function CtaBanner({ onOpenDemo, onOpenPartner }: CtaBannerProps) {
             </p>
 
             <div className="pt-2 flex items-center justify-center">
-              <button
-                type="button"
-                onClick={onOpenDemo}
-                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-extrabold text-[#064E43] bg-white hover:bg-[#E8F4EC] shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base cursor-pointer active:scale-98"
+              <a
+                href={DEMO_CALENDAR_URL}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-extrabold text-[#064E43] bg-white hover:bg-[#E8F4EC] shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base cursor-pointer active:scale-98 text-center inline-block"
               >
                 Book your free demo slot
-              </button>
+              </a>
             </div>
           </div>
         </div>
