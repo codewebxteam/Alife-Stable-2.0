@@ -84,6 +84,12 @@ export function Footer({ onOpenDemo, onOpenPartner }: FooterProps) {
             </p>
             <ul className="space-y-2 text-sm text-[#E8F4EC]/80 pt-1">
               <li>
+                <a href="/refund-policy" className="hover:text-white transition-colors text-[#E8F4EC] font-medium flex items-center gap-1.5">
+                  <span className="w-1.5 h-1.5 rounded-full bg-[#078765]" />
+                  Refund & Cancellation Policy
+                </a>
+              </li>
+              <li>
                 <a href="#terms" className="hover:text-white transition-colors">
                   Terms & Conditions
                 </a>
