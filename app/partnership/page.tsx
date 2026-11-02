@@ -48,39 +48,37 @@ export default function PartnershipPage() {
           onOpenPartner={handleOpenPartner}
         />
 
-
-
-        {/* Section 3: Launch in Steps (4 Turnkey Phases with Mid-Page CTAs) */}
-        <LaunchInSteps
-          onOpenDemo={handleOpenDemo}
-          onOpenPartner={handleOpenPartner}
-        />
-
-        {/* Section 4: Interactive Revenue & Profit Calculator (Boosts Sales & Demonstrates ROI) */}
-        <RevenueCalculator
-          onOpenPartner={handleOpenPartner}
-          onOpenDemo={handleOpenDemo}
-        />
-
-        {/* Section 5: Partnership Price Details (All-In-One Plan at ₹2,499/yr) */}
-        <Pricing
-          onOpenDemo={handleOpenDemo}
-          onOpenPartner={handleOpenPartner}
-        />
-
-        {/* Section 6: Technology Ecosystem with Mid-Page CTAs */}
+        {/* Section 2: Technology Ecosystem */}
         <TechEcosystem
           onOpenDemo={handleOpenDemo}
           onOpenPartner={handleOpenPartner}
         />
 
-        {/* Section 7: Partnership Testimonials */}
+        {/* Section 3: Partnership Price Details (Simple & Transparent Partnership Plan) */}
+        <Pricing
+          onOpenDemo={handleOpenDemo}
+          onOpenPartner={handleOpenPartner}
+        />
+
+        {/* Section 4: Launch your academy (4 Turnkey Phases) */}
+        <LaunchInSteps
+          onOpenDemo={handleOpenDemo}
+          onOpenPartner={handleOpenPartner}
+        />
+
+        {/* Section 5: Interactive Revenue & Profit Calculator */}
+        <RevenueCalculator
+          onOpenPartner={handleOpenPartner}
+          onOpenDemo={handleOpenDemo}
+        />
+
+        {/* Section 6: Partnership Testimonials */}
         <Testimonials />
 
-        {/* Section 8: FAQ */}
+        {/* Section 7: FAQ */}
         <FaqSection onOpenDemo={handleOpenDemo} />
 
-        {/* Section 9: Final High-Conversion CTA Banner with Dual CTAs */}
+        {/* Section 8: Final High-Conversion CTA Banner with Dual CTAs */}
         <CtaBanner
           onOpenDemo={handleOpenDemo}
           onOpenPartner={handleOpenPartner}
