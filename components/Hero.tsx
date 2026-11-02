@@ -64,23 +64,15 @@ export function Hero({ onOpenDemo, onOpenPartner }: HeroProps) {
               Launch your branded academy with ready-to-sell courses and your website. Focus on growing your business — we handle the technology.
             </p>
 
-            {/* CTA Buttons - Visible on tablet/desktop, mobile has sticky CTA bar */}
+            {/* Single High-Conversion Primary CTA Button */}
             <div className="hidden sm:flex flex-row items-center gap-4 mb-6 sm:mb-8">
               <button
                 type="button"
-                onClick={onOpenPartner}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base cursor-pointer active:scale-98"
-              >
-                Become a Partner
-                <ArrowRightIcon className="w-4 h-4" />
-              </button>
-
-              <button
-                type="button"
                 onClick={onOpenDemo}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-[#064E43] bg-white border-2 border-[#078765]/40 hover:border-[#078765] hover:bg-[#E8F4EC] transition-all duration-200 text-sm sm:text-base shadow-xs cursor-pointer active:scale-98"
+                className="inline-flex items-center justify-center gap-2.5 px-8 py-4 rounded-xl font-extrabold text-white bg-[#078765] hover:bg-[#064E43] shadow-lg hover:shadow-xl transition-all duration-200 text-base sm:text-lg cursor-pointer active:scale-98"
               >
-                Book Your Free Demo
+                Book your free demo slot
+                <ArrowRightIcon className="w-5 h-5" />
               </button>
             </div>
 

@@ -38,16 +38,9 @@ export function Footer({ onOpenDemo, onOpenPartner }: FooterProps) {
               <button
                 type="button"
                 onClick={onOpenDemo}
-                className="text-xs font-semibold px-3 py-1.5 rounded-lg border border-[#078765] text-[#E8F4EC] hover:bg-[#078765] hover:text-white transition-colors"
+                className="text-xs font-bold px-4 py-2 rounded-xl bg-[#078765] text-white hover:bg-[#064E43] transition-colors cursor-pointer shadow-sm"
               >
-                Book Demo
-              </button>
-              <button
-                type="button"
-                onClick={onOpenPartner}
-                className="text-xs font-semibold px-3 py-1.5 rounded-lg bg-[#078765] text-white hover:bg-[#064E43] transition-colors"
-              >
-                Become Partner
+                Book your free demo slot
               </button>
             </div>
           </div>
@@ -71,11 +64,6 @@ export function Footer({ onOpenDemo, onOpenPartner }: FooterProps) {
               <li>
                 <a href="/partnership" className="hover:text-white transition-colors">
                   Partnership Plans
-                </a>
-              </li>
-              <li>
-                <a href="/about" className="hover:text-white transition-colors">
-                  About Us
                 </a>
               </li>
               <li>

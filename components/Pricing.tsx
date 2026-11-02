@@ -65,19 +65,11 @@ export function Pricing({ onOpenDemo, onOpenPartner }: PricingProps) {
                 <div className="space-y-2 pt-1">
                   <button
                     type="button"
-                    onClick={onOpenPartner}
-                    className="w-full inline-flex items-center justify-center gap-2 py-3 px-5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 text-sm cursor-pointer active:scale-98"
-                  >
-                    {plan.ctaText}
-                    <ArrowRightIcon className="w-4 h-4" />
-                  </button>
-
-                  <button
-                    type="button"
                     onClick={onOpenDemo}
-                    className="w-full py-2.5 px-4 rounded-xl font-bold text-xs text-[#064E43] bg-[#E8F4EC] hover:bg-[#078765] hover:text-white transition-all cursor-pointer"
+                    className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 text-sm cursor-pointer active:scale-98"
                   >
-                    Request a Demo First
+                    Book your free demo slot
+                    <ArrowRightIcon className="w-4 h-4" />
                   </button>
                 </div>
               </div>

@@ -198,14 +198,14 @@ export default function CourseDetailsPage() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12">
             {/* Left Column: Video Introduction, Demos, Resources & Curriculum */}
             <div className="lg:col-span-8 space-y-10">
-              {/* Course Introduction Video (Protected - Launches Custom Player) */}
+              {/* Class Demo Video (Protected - Launches Custom Player) */}
               {course.mainVideoId && (
                 <div className="bg-white rounded-3xl overflow-hidden border border-[#078765]/15 shadow-sm">
                   <div className="p-6 border-b border-gray-100 flex items-center justify-between">
                     <div className="flex items-center gap-3">
                       <PlayCircle className="text-[#078765]" size={24} />
                       <h2 className="text-xl font-bold text-[#102B2B]">
-                        Course Introduction
+                        Class Demo Video
                       </h2>
                     </div>
                     <span className="text-xs font-semibold px-2.5 py-1 rounded-lg bg-[#E8F4EC] text-[#078765]">
@@ -219,7 +219,7 @@ export default function CourseDetailsPage() {
                       openPlayer([
                         {
                           videoId: course.mainVideoId,
-                          title: course.title || "Course Introduction",
+                          title: course.title || "Class Demo Video",
                         },
                       ])
                     }
@@ -227,7 +227,7 @@ export default function CourseDetailsPage() {
                     <img
                       src={`https://img.youtube.com/vi/${course.mainVideoId}/maxresdefault.jpg`}
                       className="w-full h-full object-cover opacity-85 group-hover:opacity-70 transition-opacity"
-                      alt="Course Intro Preview"
+                      alt="Class Demo Video Preview"
                     />
                     <div className="absolute inset-0 flex items-center justify-center">
                       <div className="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-md rounded-full flex items-center justify-center border border-white/40 group-hover:scale-110 transition-transform shadow-xl">
@@ -390,21 +390,14 @@ export default function CourseDetailsPage() {
                     </div>
                   </div>
 
-                  {/* Actions (No Price, No Buy Now) */}
-                  <div className="pt-2 space-y-2.5">
-                    <button
-                      type="button"
-                      onClick={handleOpenPartner}
-                      className="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-[#078765] hover:bg-[#064E43] shadow-md transition-all cursor-pointer text-center"
-                    >
-                      Get Partner License
-                    </button>
+                  {/* Actions (Single CTA) */}
+                  <div className="pt-2">
                     <button
                       type="button"
                       onClick={handleOpenDemo}
-                      className="w-full py-3 px-4 rounded-xl font-bold text-xs text-[#064E43] bg-[#E8F4EC] hover:bg-[#078765] hover:text-white border border-[#078765]/20 transition-all cursor-pointer text-center"
+                      className="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-[#078765] hover:bg-[#064E43] shadow-md transition-all cursor-pointer text-center active:scale-98"
                     >
-                      Book Free Guided Demo
+                      Book your free demo slot
                     </button>
                   </div>
 

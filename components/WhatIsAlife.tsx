@@ -37,7 +37,7 @@ export function WhatIsAlife({ onOpenDemo }: WhatIsAlifeProps) {
                 onClick={onOpenDemo}
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
               >
-                Book Your Free Demo
+                Book your free demo slot
                 <ArrowRightIcon className="w-4 h-4" />
               </button>
             </div>

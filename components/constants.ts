@@ -37,7 +37,7 @@ export const IMAGE_ASSETS = {
 export const BRAND_INFO = {
   name: "Alife Stable",
   tagline: "Partner • Grow • Succeed",
-  eyebrow: "YOUR EDUCATION PARTNER FOR A BIGGER TOMORROW",
+  eyebrow: "A Reliable place to grow",
   heroHeadline: "Build Your Own AI Course Business with Alife Stable",
   heroDescription:
     "Launch your own branded online learning business with ready-to-sell courses, a personal website, and complete support. Focus on growing your business — we handle the technology and course infrastructure.",
@@ -153,7 +153,7 @@ export const PRICING_PLANS = [
   {
     id: "all-in-one",
     name: "Complete Partnership Plan",
-    price: "₹1,999",
+    price: "₹2,499",
     period: "/ year",
     popular: true,
     badge: "All-Inclusive Plan",
@@ -168,7 +168,7 @@ export const PRICING_PLANS = [
       "Keep 100% of Your Course Profits",
       "Onboarding, Training & Priority Support",
     ],
-    ctaText: "Become a Partner",
+    ctaText: "Book your free demo slot",
   },
 ];
 
@@ -214,7 +214,7 @@ export const FAQ_ITEMS = [
   {
     question: "Can I use my own brand name and domain?",
     answer:
-      "The partnership setup supports your own brand identity and domain, subject to the selected plan and applicable setup requirements.",
+      "Yes! Your academy supports your own brand name and logo. If you wish to connect your own custom domain, our team can configure it for an additional ₹500 setup charge.",
   },
   {
     question: "Do I get 100% of the profits?",

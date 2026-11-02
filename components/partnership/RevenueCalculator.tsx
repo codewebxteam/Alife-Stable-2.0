@@ -148,23 +148,15 @@ export function RevenueCalculator({
                 </div>
               </div>
 
-              {/* Action Buttons */}
-              <div className="space-y-2.5 pt-2">
-                <button
-                  type="button"
-                  onClick={onOpenPartner}
-                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl font-bold text-[#102B2B] bg-[#FBF7EF] hover:bg-white shadow-md hover:shadow-lg transition-all duration-200 text-sm cursor-pointer active:scale-98"
-                >
-                  Start Your Academy for ₹1,999/yr
-                  <ArrowRight className="w-4 h-4" />
-                </button>
-
+              {/* Action Button */}
+              <div className="pt-2">
                 <button
                   type="button"
                   onClick={onOpenDemo}
-                  className="w-full py-2.5 px-4 rounded-xl font-bold text-xs text-white/90 bg-white/10 hover:bg-white/20 border border-white/20 transition-all cursor-pointer"
+                  className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl font-bold text-[#102B2B] bg-[#FBF7EF] hover:bg-white shadow-md hover:shadow-lg transition-all duration-200 text-sm cursor-pointer active:scale-98"
                 >
-                  Book 1-on-1 Walkthrough Call
+                  Book your free demo slot
+                  <ArrowRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
@@ -210,7 +202,7 @@ export function RevenueCalculator({
                 Set Your Own Course Pricing
               </h4>
               <p className="text-[11px] text-[#102B2B] font-medium mt-0.5">
-                Full freedom to charge ₹499, ₹1,999, or ₹9,999.
+                Full freedom to charge ₹499, ₹2,499, or ₹9,999.
               </p>
             </div>
           </div>

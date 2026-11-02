@@ -30,22 +30,13 @@ export function CtaBanner({ onOpenDemo, onOpenPartner }: CtaBannerProps) {
               Book a free demo today and discover how Alife Stable can help you build, grow, and succeed with ready-made courses and turnkey infrastructure.
             </p>
 
-            <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-2.5 sm:gap-3.5">
+            <div className="pt-2 flex items-center justify-center">
               <button
                 type="button"
                 onClick={onOpenDemo}
-                className="w-full sm:w-auto px-5 py-3 rounded-xl font-bold text-[#064E43] bg-white hover:bg-[#E8F4EC] shadow-sm hover:shadow-md transition-all duration-200 text-xs sm:text-sm cursor-pointer active:scale-98"
+                className="w-full sm:w-auto px-8 py-3.5 rounded-xl font-extrabold text-[#064E43] bg-white hover:bg-[#E8F4EC] shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base cursor-pointer active:scale-98"
               >
-                Book Your Free Demo
-              </button>
-
-              <button
-                type="button"
-                onClick={onOpenPartner}
-                className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-5 py-3 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#05694f] border border-white/20 shadow-sm hover:shadow-md transition-all duration-200 text-xs sm:text-sm cursor-pointer active:scale-98"
-              >
-                Become a Partner
-                <ArrowRightIcon className="w-3.5 h-3.5" />
+                Book your free demo slot
               </button>
             </div>
           </div>

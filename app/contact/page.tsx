@@ -42,7 +42,7 @@ export default function ContactPage() {
     phone: "",
     city: "",
     role: "Coaching Institute / Teacher",
-    interest: "Complete Partnership Plan (₹1,999/year)",
+    interest: "Complete Partnership Plan (₹2,499/year)",
     message: "",
   });
 
@@ -120,7 +120,7 @@ export default function ContactPage() {
 
             {/* Subtitle */}
             <p className="mt-2 text-xs sm:text-base text-[#65736F] max-w-2xl mx-auto leading-relaxed">
-              Have questions about our ₹1,999/yr partnership program, want a personalized platform demonstration, or need support? We are always here to guide you.
+              Have questions about our ₹2,499/yr partnership program, want a personalized platform demonstration, or need support? We are always here to guide you.
             </p>
           </div>
         </section>
@@ -202,21 +202,14 @@ export default function ContactPage() {
                     </div>
                   </div>
 
-                  {/* Fast Action Buttons */}
-                  <div className="pt-2 border-t border-[#078765]/15 flex flex-col sm:flex-row gap-2">
+                  {/* Fast Action Button */}
+                  <div className="pt-2 border-t border-[#078765]/15">
                     <button
                       type="button"
                       onClick={handleOpenDemo}
-                      className="flex-1 py-2 px-3 rounded-xl font-bold text-xs text-center text-[#064E43] bg-[#E8F4EC] hover:bg-[#078765] hover:text-white transition-all cursor-pointer"
+                      className="w-full py-2.5 px-3 rounded-xl font-bold text-xs text-center text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer shadow-sm active:scale-98"
                     >
-                      Schedule Screen Demo
-                    </button>
-                    <button
-                      type="button"
-                      onClick={handleOpenPartner}
-                      className="flex-1 py-2 px-3 rounded-xl font-bold text-xs text-center text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer"
-                    >
-                      Join as Partner
+                      Book your free demo slot
                     </button>
                   </div>
                 </div>
@@ -263,7 +256,7 @@ export default function ContactPage() {
                               phone: "",
                               city: "",
                               role: "Coaching Institute / Teacher",
-                              interest: "Complete Partnership Plan (₹1,999/year)",
+                              interest: "Complete Partnership Plan (₹2,499/year)",
                               message: "",
                             });
                           }}
@@ -403,8 +396,8 @@ export default function ContactPage() {
                             onChange={handleInputChange}
                             className="w-full px-3 py-2 rounded-xl border border-gray-200 text-xs sm:text-sm text-[#102B2B] bg-[#FBF7EF]/30 focus:bg-white focus:outline-none focus:ring-2 focus:ring-[#078765] focus:border-transparent transition-all cursor-pointer"
                           >
-                            <option value="Complete Partnership Plan (₹1,999/year)">
-                              Complete Partnership Plan (₹1,999/year)
+                            <option value="Complete Partnership Plan (₹2,499/year)">
+                              Complete Partnership Plan (₹2,499/year)
                             </option>
                             <option value="Request a Live Platform Demo">
                               Request a Live Platform Demo

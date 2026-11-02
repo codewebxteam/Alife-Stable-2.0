@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import { Header } from "../../components/Header";
 import { PartnershipHero } from "../../components/partnership/PartnershipHero";
-import { PartnershipVideo } from "../../components/partnership/PartnershipVideo";
+
 import { LaunchInSteps } from "../../components/partnership/LaunchInSteps";
 import { RevenueCalculator } from "../../components/partnership/RevenueCalculator";
 import { Pricing } from "../../components/Pricing";
@@ -38,7 +38,7 @@ export default function PartnershipPage() {
 
   return (
     <div className="min-h-screen flex flex-col bg-[#FBF7EF] text-[#102B2B] antialiased selection:bg-[#078765]/20 selection:text-[#064E43]">
-      {/* 1. Header with Fixed Top-Right Dual CTAs ("Book Free Demo" & "Become a Partner") */}
+      {/* 1. Header with Single CTA ("Book your free demo slot") */}
       <Header onOpenDemo={handleOpenDemo} onOpenPartner={handleOpenPartner} />
 
       <main className="flex-1">
@@ -48,11 +48,7 @@ export default function PartnershipPage() {
           onOpenPartner={handleOpenPartner}
         />
 
-        {/* Section 2: Partnership Presentation Video with Mid-Page CTAs */}
-        <PartnershipVideo
-          onOpenDemo={handleOpenDemo}
-          onOpenPartner={handleOpenPartner}
-        />
+
 
         {/* Section 3: Launch in Steps (4 Turnkey Phases with Mid-Page CTAs) */}
         <LaunchInSteps
@@ -66,7 +62,7 @@ export default function PartnershipPage() {
           onOpenDemo={handleOpenDemo}
         />
 
-        {/* Section 5: Partnership Price Details (All-In-One Plan at ₹1,999/yr) */}
+        {/* Section 5: Partnership Price Details (All-In-One Plan at ₹2,499/yr) */}
         <Pricing
           onOpenDemo={handleOpenDemo}
           onOpenPartner={handleOpenPartner}

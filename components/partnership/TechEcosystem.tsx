@@ -4,10 +4,12 @@ import React from "react";
 import {
   Globe,
   Layout,
-  ShieldCheck,
+  Sliders,
+  BookOpen,
+  Sparkles,
+  TrendingUp,
   CreditCard,
-  BarChart3,
-  Server,
+  Headphones,
   ArrowRight,
   CheckCircle2,
   Cpu,
@@ -21,52 +23,68 @@ interface TechEcosystemProps {
 export function TechEcosystem({ onOpenDemo, onOpenPartner }: TechEcosystemProps) {
   const pillars = [
     {
+      icon: Globe,
+      title: "Professional website (Fully functional)",
+      subtitle: "Turnkey Deployment",
+      description:
+        "Modern, high-converting branded website ready to welcome visitors and convert them into paying students.",
+      highlight: "100% Functional",
+    },
+    {
       icon: Layout,
-      title: "Student LMS Portal",
+      title: "Student LMS",
       subtitle: "Web & Mobile Friendly",
       description:
-        "Fast-loading learning portal branded with your custom domain, logo, and academy theme.",
+        "Fast-loading learning management portal for students with smooth playback, course progress, and resources.",
       highlight: "Custom White-Label",
     },
     {
-      icon: Globe,
-      title: "Partner Admin Dashboard",
+      icon: Sliders,
+      title: "Admin Panel",
       subtitle: "Total Business Control",
       description:
-        "Manage students, assign course batches, track orders, and issue custom certificates.",
+        "Comprehensive dashboard to manage learners, assign courses, track enrollments, and oversee operations.",
       highlight: "Full Admin Access",
     },
     {
-      icon: ShieldCheck,
-      title: "Anti-Piracy Video Player",
-      subtitle: "HD Secure Streaming",
+      icon: BookOpen,
+      title: "Ready to sell high demand courses",
+      subtitle: "Pre-Loaded Content",
       description:
-        "Encrypted video player with disabled external sharing to protect your proprietary course assets.",
-      highlight: "100% DRM Protected",
+        "Curated library of high-converting AI and tech courses ready to market immediately with zero filming required.",
+      highlight: "Zero Course Creation",
     },
     {
-      icon: CreditCard,
-      title: "Direct Payment Integration",
-      subtitle: "Instant Bank Payouts",
+      icon: Sparkles,
+      title: "Your brand, Your pricing",
+      subtitle: "Complete Freedom",
       description:
-        "Razorpay, UPI, & credit card checkout. 100% of student fee goes straight into your bank account.",
+        "Operate under your own academy name and identity with full freedom to set course prices that suit your market.",
+      highlight: "Your Own Brand",
+    },
+    {
+      icon: TrendingUp,
+      title: "Keep 100% Profits",
+      subtitle: "Zero Profit Sharing",
+      description:
+        "No platform royalty cuts or commission splits. Every rupee generated from your course sales is 100% yours.",
       highlight: "0% Commission Cut",
     },
     {
-      icon: BarChart3,
-      title: "Real-Time Sales Analytics",
-      subtitle: "Live Revenue Tracking",
+      icon: CreditCard,
+      title: "Direct Payment integration",
+      subtitle: "Instant Bank Payouts",
       description:
-        "Track student completion rates, top-performing courses, and daily revenue growth in real time.",
-      highlight: "Live Data Insights",
+        "Direct checkout via Razorpay, UPI, & cards so student payments deposit straight into your personal bank account.",
+      highlight: "Direct Settlements",
     },
     {
-      icon: Server,
-      title: "Managed Cloud Hosting",
-      subtitle: "Zero Maintenance",
+      icon: Headphones,
+      title: "Training & supports",
+      subtitle: "Dedicated Guidance",
       description:
-        "Zero server headaches. We handle high-speed CDN hosting, SSL certificates, and 24/7 uptime.",
-      highlight: "99.9% Uptime SLA",
+        "Step-by-step onboarding, platform walkthroughs, and priority advisory support whenever you need assistance.",
+      highlight: "Priority Assistance",
     },
   ];
 
@@ -87,8 +105,8 @@ export function TechEcosystem({ onOpenDemo, onOpenPartner }: TechEcosystemProps)
           </p>
         </div>
 
-        {/* 6 Technology Pillars Grid: 2 columns on mobile, 3 columns on desktop */}
-        <div className="grid grid-cols-2 lg:grid-cols-3 gap-3 sm:gap-5 md:gap-6 mb-8 sm:mb-10">
+        {/* 8 Technology Pillars Grid: 1 col on mobile, 2 on tablet, 4 on desktop */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 mb-8 sm:mb-10">
           {pillars.map((item, idx) => {
             const Icon = item.icon;
 
@@ -146,16 +164,9 @@ export function TechEcosystem({ onOpenDemo, onOpenPartner }: TechEcosystemProps)
             <button
               type="button"
               onClick={onOpenDemo}
-              className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl font-bold text-xs text-[#064E43] bg-[#E8F4EC] hover:bg-[#078765] hover:text-white transition-all cursor-pointer shadow-2xs active:scale-98"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer shadow-md active:scale-98"
             >
-              Request Walkthrough
-            </button>
-            <button
-              type="button"
-              onClick={onOpenPartner}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl font-bold text-xs text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer shadow-md active:scale-98"
-            >
-              Become Partner
+              Book your free demo slot
               <ArrowRight className="w-3.5 h-3.5" />
             </button>
           </div>

@@ -59,9 +59,9 @@ export function FaqSection({ onOpenDemo }: FaqSectionProps) {
               <button
                 type="button"
                 onClick={onOpenDemo}
-                className="w-full text-center py-2 px-3 rounded-xl bg-[#078765] text-white hover:bg-[#064E43] text-xs font-bold transition-colors cursor-pointer"
+                className="w-full text-center py-2.5 px-4 rounded-xl bg-[#078765] hover:bg-[#064E43] text-white text-xs sm:text-sm font-bold shadow-sm hover:shadow-md transition-all duration-200 cursor-pointer active:scale-98"
               >
-                Connect with Support
+                Book your free demo slot
               </button>
             </div>
           </div>

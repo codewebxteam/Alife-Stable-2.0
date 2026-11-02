@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { IMAGE_ASSETS } from "../constants";
+import { IMAGE_ASSETS, BRAND_INFO } from "../constants";
 import { ArrowRightIcon, CheckIcon } from "../Icons";
 
 interface PartnershipHeroProps {
@@ -25,7 +25,7 @@ export function PartnershipHero({ onOpenDemo, onOpenPartner }: PartnershipHeroPr
             {/* Eyebrow */}
             <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-[#E8F4EC] border border-[#078765]/20 text-[#078765] text-[10px] sm:text-xs font-bold uppercase tracking-wider shadow-2xs">
               <span className="w-1.5 h-1.5 rounded-full bg-[#078765] animate-pulse" />
-              OFFICIAL PARTNERSHIP PROGRAM
+              {BRAND_INFO.eyebrow}
             </div>
 
             {/* Main Title */}
@@ -55,23 +55,15 @@ export function PartnershipHero({ onOpenDemo, onOpenPartner }: PartnershipHeroPr
               Launch your own branded academy with ready-to-sell AI & digital courses, a personal domain, full admin controls, and complete tech support. You focus on learners — we handle the technology.
             </p>
 
-            {/* Dual CTAs in Hero - Visible on desktop/tablet */}
-            <div className="hidden sm:flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5 sm:gap-4 pt-1">
-              <button
-                type="button"
-                onClick={onOpenPartner}
-                className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base cursor-pointer active:scale-98"
-              >
-                Become a Partner
-                <ArrowRightIcon className="w-4 h-4" />
-              </button>
-
+            {/* Single CTA in Hero */}
+            <div className="hidden sm:flex flex-row items-center gap-4 pt-1">
               <button
                 type="button"
                 onClick={onOpenDemo}
-                className="inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-[#064E43] bg-white border-2 border-[#078765]/40 hover:border-[#078765] hover:bg-[#E8F4EC] transition-all duration-200 text-sm sm:text-base shadow-xs cursor-pointer active:scale-98"
+                className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 text-sm sm:text-base cursor-pointer active:scale-98"
               >
-                Book Your Free Demo
+                Book your free demo slot
+                <ArrowRightIcon className="w-4 h-4" />
               </button>
             </div>
 

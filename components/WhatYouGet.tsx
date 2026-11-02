@@ -12,12 +12,12 @@ export const comparisonRows = [
   {
     feature: "Course Content & Curriculum",
     traditional: "6–12 months spent filming, editing, and designing syllabus from scratch",
-    alife: "Instant access to 1000+ pre-built, high-demand AI and tech courses ready to sell",
+    alife: "Instant access to pre-built, high-demand AI and tech courses ready to sell",
   },
   {
     feature: "Capital Investment Required",
     traditional: "₹3,00,000 to ₹5,00,000+ for custom development, LMS licenses, and studio gear",
-    alife: "All-inclusive turnkey partnership license at just ₹1,999/year",
+    alife: "All-inclusive turnkey partnership license at just ₹2,499 / Year",
   },
   {
     feature: "Revenue & Profit Retention",
@@ -53,7 +53,7 @@ export function WhatYouGet({ onOpenPartner, onOpenDemo }: WhatYouGetProps) {
             Starting Alone vs. Partnering with Alife Stable
           </h2>
           <p className="mt-2 text-[#102B2B] text-xs sm:text-sm font-medium">
-            Why hundreds of educators choose our turnkey franchise ecosystem over cumbersome, expensive traditional development.
+            Why hundreds of educators choose our turnkey partnership ecosystem over cumbersome, expensive traditional development.
           </p>
         </div>
 
@@ -148,20 +148,13 @@ export function WhatYouGet({ onOpenPartner, onOpenDemo }: WhatYouGetProps) {
 
         {/* Mid-Page Call to Action */}
         <div className="mt-5 sm:mt-6 text-center">
-          <div className="inline-flex flex-col sm:flex-row items-center gap-2.5">
-            <button
-              type="button"
-              onClick={onOpenPartner}
-              className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-xs transition-all cursor-pointer text-xs sm:text-sm"
-            >
-              Start Your Branded Academy at ₹1,999/yr
-            </button>
+          <div className="inline-flex items-center justify-center">
             <button
               type="button"
               onClick={onOpenDemo}
-              className="w-full sm:w-auto px-5 py-2.5 rounded-xl font-bold text-[#064E43] bg-white border border-[#078765]/30 hover:border-[#078765] transition-all cursor-pointer text-xs sm:text-sm"
+              className="w-full sm:w-auto px-7 py-3 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md transition-all cursor-pointer text-xs sm:text-sm active:scale-98"
             >
-              Request a Quick Demo
+              Book your free demo slot
             </button>
           </div>
         </div>

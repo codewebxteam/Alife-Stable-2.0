@@ -56,16 +56,9 @@ export function PartnershipVideo({ onOpenDemo, onOpenPartner }: PartnershipVideo
             <button
               type="button"
               onClick={onOpenDemo}
-              className="flex-1 sm:flex-none px-4 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-[#064E43] bg-white border border-[#078765]/30 hover:border-[#078765] hover:bg-[#E8F4EC] transition-all cursor-pointer shadow-2xs active:scale-98"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer shadow-md active:scale-98"
             >
-              Book Free Demo
-            </button>
-            <button
-              type="button"
-              onClick={onOpenPartner}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-1.5 px-5 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer shadow-md active:scale-98"
-            >
-              Become Partner
+              Book your free demo slot
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

@@ -130,13 +130,13 @@ const CourseDetails = () => {
       <div className="max-w-7xl mx-auto px-6 lg:mt-12">
         <div className="grid lg:grid-cols-3 gap-8 lg:gap-12">
           <div className="lg:col-span-2 space-y-12">
-            {/* 1. Course Introduction */}
+            {/* 1. Class Demo Video */}
             {course?.mainVideoId && (
               <div className="bg-white rounded-[32px] overflow-hidden border border-slate-100 shadow-sm">
                 <div className="p-6 border-b border-slate-50 flex items-center gap-3">
                   <PlayCircle className="text-[#0891b2]" size={24} />
                   <h2 className="text-xl font-bold text-slate-900">
-                    Course Introduction
+                    Class Demo Video
                   </h2>
                 </div>
 
@@ -146,7 +146,7 @@ const CourseDetails = () => {
                     openPlayer([
                       {
                         videoId: course.mainVideoId,
-                        title: "Course Introduction",
+                        title: "Class Demo Video",
                       },
                     ])
                   }

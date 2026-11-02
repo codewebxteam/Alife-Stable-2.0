@@ -36,8 +36,8 @@ export function LaunchInSteps({ onOpenDemo, onOpenPartner }: LaunchInStepsProps)
       title: "Brand & Domain Setup",
       subtitle: "White-Label Deployment",
       points: [
-        "Custom web domain configured by our team",
         "Personalized with your academy logo & branding",
+        "Custom domain configuration (+₹500 additional charge)",
         "Dedicated student learning portal deployed",
       ],
     },
@@ -58,7 +58,7 @@ export function LaunchInSteps({ onOpenDemo, onOpenPartner }: LaunchInStepsProps)
       title: "Start Selling & Scaling",
       subtitle: "100% Profit Retention",
       points: [
-        "Academy goes live with 16+ pre-loaded AI mastercourses",
+        "Academy goes live with pre-loaded AI mastercourses",
         "Full cloud hosting, CDN, & server maintenance included",
         "Keep 100% of your course sales and profits",
       ],
@@ -170,24 +170,17 @@ export function LaunchInSteps({ onOpenDemo, onOpenPartner }: LaunchInStepsProps)
               Want our technical team to set up your academy for you?
             </h3>
             <p className="text-xs text-white/90 font-medium">
-              Join today at ₹1,999/yr and our onboarding engineers will configure everything for you.
+              Join today at ₹2,499 / Year and our onboarding engineers will configure everything for you.
             </p>
           </div>
 
-          <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
+          <div className="flex items-center justify-center shrink-0 w-full sm:w-auto">
             <button
               type="button"
               onClick={onOpenDemo}
-              className="flex-1 sm:flex-none px-5 py-3 rounded-xl font-bold text-xs text-[#064E43] bg-white hover:bg-[#E8F4EC] transition-all cursor-pointer shadow-xs active:scale-98"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-xs sm:text-sm text-[#064E43] bg-white hover:bg-[#E8F4EC] transition-all cursor-pointer shadow-md active:scale-98"
             >
-              Book Free Walkthrough
-            </button>
-            <button
-              type="button"
-              onClick={onOpenPartner}
-              className="flex-1 sm:flex-none inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl font-bold text-xs text-white bg-[#078765] hover:bg-[#05694f] border border-white/20 transition-all cursor-pointer shadow-md active:scale-98"
-            >
-              Start Registration
+              Book your free demo slot
               <ArrowRight className="w-4 h-4" />
             </button>
           </div>

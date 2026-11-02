@@ -6,10 +6,11 @@ import { IMAGE_ASSETS, YOUR_ACADEMY_CHECKLIST } from "./constants";
 import { ArrowRightIcon, CheckIcon } from "./Icons";
 
 interface YourAcademyProps {
-  onOpenPartner: () => void;
+  onOpenDemo?: () => void;
+  onOpenPartner?: () => void;
 }
 
-export function YourAcademy({ onOpenPartner }: YourAcademyProps) {
+export function YourAcademy({ onOpenDemo, onOpenPartner }: YourAcademyProps) {
   return (
     <section className="py-6 sm:py-8 lg:py-10 bg-[#FFFFFF] relative overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,10 +46,10 @@ export function YourAcademy({ onOpenPartner }: YourAcademyProps) {
             <div className="pt-4">
               <button
                 type="button"
-                onClick={onOpenPartner}
-                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer text-base"
+                onClick={onOpenDemo || onOpenPartner}
+                className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer text-base active:scale-98"
               >
-                Become a Partner
+                Book your free demo slot
                 <ArrowRightIcon className="w-4 h-4" />
               </button>
             </div>

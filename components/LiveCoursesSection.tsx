@@ -18,6 +18,7 @@ interface CourseItem {
   id: string;
   title?: string;
   instructor?: string;
+  partnerId?: string;
   category?: string;
   duration?: string;
   rating?: number;
@@ -71,10 +72,18 @@ export function LiveCoursesSection({ onOpenDemo, onOpenPartner }: LiveCoursesSec
     async function fetchCourseCatalog() {
       try {
         const querySnapshot = await getDocs(collection(db, "courseVideos"));
-        const list: CourseItem[] = querySnapshot.docs.map((docSnap) => ({
+        const rawList: CourseItem[] = querySnapshot.docs.map((docSnap) => ({
           id: docSnap.id,
           ...(docSnap.data() as Omit<CourseItem, "id">),
         }));
+
+        // Filter: ONLY show admin-created courses (exclude partner/test uploads)
+        const list = rawList.filter((item) => {
+          const isPartner =
+            Boolean(item.partnerId) ||
+            item.instructor?.toLowerCase() === "partner";
+          return !isPartner || item.instructor?.toLowerCase() === "admin";
+        });
 
         // Sort courses to show highest priority first, then creation order
         list.sort((a, b) => {
@@ -241,11 +250,7 @@ export function LiveCoursesSection({ onOpenDemo, onOpenPartner }: LiveCoursesSec
                         {/* Subtle Dark Vignette */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent opacity-75" />
 
-                        {/* Top-Left Category Badge */}
-                        <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider border border-white/10 shadow-sm">
-                          <span className="w-1.5 h-1.5 rounded-full bg-amber-400 animate-pulse" />
-                          {topicCategory}
-                        </div>
+
 
                         {/* Top-Right Coming Soon badge */}
                         <div className="absolute top-3 right-3 px-2.5 py-0.5 rounded-md bg-amber-500 text-white text-[10px] font-extrabold tracking-wider uppercase shadow-xs flex items-center gap-1">
@@ -292,11 +297,7 @@ export function LiveCoursesSection({ onOpenDemo, onOpenPartner }: LiveCoursesSec
                         {/* Subtle Dark Vignette */}
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity" />
 
-                        {/* Top-Left Category Badge */}
-                        <div className="absolute top-3 left-3 flex items-center gap-1.5 px-2.5 py-1 rounded-lg bg-black/60 backdrop-blur-md text-white text-[10px] font-bold uppercase tracking-wider border border-white/10 shadow-sm">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[#078765] animate-pulse" />
-                          {topicCategory}
-                        </div>
+
 
                         {/* Top-Right Ready to Sell badge */}
                         <div className="absolute top-3 right-3 px-2 py-0.5 rounded-md bg-[#078765] text-white text-[10px] font-bold tracking-wider uppercase shadow-xs">
@@ -352,7 +353,7 @@ export function LiveCoursesSection({ onOpenDemo, onOpenPartner }: LiveCoursesSec
                             </div>
                             <div className="flex items-center gap-2 text-xs text-[#102B2B] font-semibold">
                               <ShieldCheck className="w-3.5 h-3.5 text-[#078765] shrink-0" />
-                              <span>100% White-Label Franchise Rights</span>
+                              <span>100% White-Label Commercial Rights</span>
                             </div>
                           </>
                         )}
@@ -416,25 +417,17 @@ export function LiveCoursesSection({ onOpenDemo, onOpenPartner }: LiveCoursesSec
           </h2>
 
           <p className="text-sm sm:text-base text-[#102B2B] max-w-2xl mx-auto font-medium leading-relaxed">
-            Get instant access to this entire curriculum library, a custom branded platform with your domain & logo, secure video streaming, and zero technical hassles for just ₹1,999/yr.
+            Get instant access to this entire curriculum library, a custom branded platform with your domain & logo, secure video streaming, and zero technical hassles for just ₹2,499 / Year.
           </p>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3 pt-2">
-            <button
-              type="button"
-              onClick={onOpenPartner}
-              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all text-sm cursor-pointer active:scale-98"
-            >
-              Become an Alife Stable Partner
-              <ArrowRight className="w-4 h-4" />
-            </button>
-
+          <div className="flex items-center justify-center pt-2">
             <button
               type="button"
               onClick={onOpenDemo}
-              className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3.5 rounded-xl font-bold text-[#064E43] bg-white border-2 border-[#078765]/30 hover:border-[#078765] hover:bg-[#E8F4EC] transition-all text-sm shadow-xs cursor-pointer active:scale-98"
+              className="w-full sm:w-auto inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all text-sm cursor-pointer active:scale-98"
             >
-              Request a Free Live Demo
+              Book your free demo slot
+              <ArrowRight className="w-4 h-4" />
             </button>
           </div>
         </div>

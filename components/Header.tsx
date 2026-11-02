@@ -41,7 +41,6 @@ export function Header({ onOpenDemo, onOpenPartner }: HeaderProps) {
     { label: "Home", href: "/" },
     { label: "Courses", href: "/courses" },
     { label: "Partnership", href: "/partnership" },
-    { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -57,9 +56,6 @@ export function Header({ onOpenDemo, onOpenPartner }: HeaderProps) {
     }
     if (href === "/partnership") {
       return pathname === "/partnership";
-    }
-    if (href === "/about") {
-      return pathname === "/about";
     }
     if (href === "/contact") {
       return pathname === "/contact";
@@ -124,21 +120,14 @@ export function Header({ onOpenDemo, onOpenPartner }: HeaderProps) {
             })}
           </nav>
 
-          {/* Desktop Right CTAs */}
+          {/* Desktop Right Single CTA */}
           <div className="hidden lg:flex items-center gap-3">
             <button
               type="button"
               onClick={onOpenDemo}
-              className="px-4 py-2 text-sm font-semibold text-[#064E43] border border-[#078765] rounded-xl hover:bg-[#E8F4EC] transition-all duration-200 cursor-pointer shadow-xs active:scale-95"
+              className="px-5 py-2.5 text-sm font-bold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer active:scale-95"
             >
-              Book Your Free Demo
-            </button>
-            <button
-              type="button"
-              onClick={onOpenPartner}
-              className="px-5 py-2 text-sm font-semibold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer active:scale-95"
-            >
-              Become a Partner
+              Book your free demo slot
             </button>
           </div>
 
@@ -147,9 +136,9 @@ export function Header({ onOpenDemo, onOpenPartner }: HeaderProps) {
             <button
               type="button"
               onClick={onOpenDemo}
-              className="hidden sm:inline-flex text-xs font-semibold text-[#064E43] border border-[#078765] px-3 py-1.5 rounded-lg hover:bg-[#E8F4EC]"
+              className="hidden sm:inline-flex text-xs font-bold text-white bg-[#078765] px-3 py-1.5 rounded-lg hover:bg-[#064E43] shadow-xs cursor-pointer"
             >
-              Free Demo
+              Book your free demo slot
             </button>
             <button
               type="button"
@@ -195,19 +184,9 @@ export function Header({ onOpenDemo, onOpenPartner }: HeaderProps) {
                   setMobileMenuOpen(false);
                   onOpenDemo();
                 }}
-                className="w-full py-2.5 text-center text-sm font-semibold text-[#064E43] border border-[#078765] rounded-xl hover:bg-[#E8F4EC]"
+                className="w-full py-3 text-center text-sm font-bold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl shadow-sm cursor-pointer"
               >
-                Book Your Free Demo
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenPartner();
-                }}
-                className="w-full py-2.5 text-center text-sm font-semibold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl shadow-sm"
-              >
-                Become a Partner
+                Book your free demo slot
               </button>
             </div>
           </div>
