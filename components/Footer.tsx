@@ -95,7 +95,7 @@ export function Footer({ onOpenDemo, onOpenPartner }: FooterProps) {
                 </a>
               </li>
               <li>
-                <a href="#privacy" className="hover:text-white transition-colors">
+                <a href="/privacy-policy" className="hover:text-white transition-colors">
                   Privacy Policy
                 </a>
               </li>
