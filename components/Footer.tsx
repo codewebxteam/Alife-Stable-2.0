@@ -1,8 +1,8 @@
 "use client";
 
 import React from "react";
-import { BrandLogoMark } from "./Icons";
-import { BRAND_INFO, DEMO_CALENDAR_URL } from "./constants";
+import Link from "next/link";
+import { BRAND_INFO } from "./constants";
 
 interface FooterProps {
   onOpenDemo: () => void;
@@ -19,14 +19,12 @@ export function Footer({ onOpenDemo, onOpenPartner }: FooterProps) {
           {/* Brand Info */}
           <div className="md:col-span-5 space-y-4">
             <div className="flex items-center gap-3">
-              <BrandLogoMark className="w-10 h-10" />
-              <div>
-                <span className="text-xl font-extrabold tracking-tight text-white block">
-                  {BRAND_INFO.name}
-                </span>
-                <span className="text-[10px] uppercase font-bold tracking-widest text-[#078765]">
-                  {BRAND_INFO.tagline}
-                </span>
+              <div className="bg-white px-3 py-1.5 rounded-xl inline-flex items-center shadow-xs">
+                <img
+                  src="https://ik.imagekit.io/0s0fb4b2b/AlifeLogo.png"
+                  alt="Alife Stable Logo"
+                  className="h-8 w-auto object-contain"
+                />
               </div>
             </div>
 
@@ -35,14 +33,12 @@ export function Footer({ onOpenDemo, onOpenPartner }: FooterProps) {
             </p>
 
             <div className="flex items-center gap-3 pt-2">
-              <a
-                href={DEMO_CALENDAR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-xs font-bold px-4 py-2 rounded-xl bg-[#078765] text-white hover:bg-[#064E43] transition-colors cursor-pointer shadow-sm inline-flex items-center gap-1.5"
+              <Link
+                href="/book-demo"
+                className="text-xs font-bold px-4 py-2 rounded-xl bg-[#078765] text-white hover:bg-[#064E43] transition-colors cursor-pointer shadow-sm inline-flex items-center gap-1.5 active:scale-95"
               >
-                Book your free demo slot
-              </a>
+                Book Demo
+              </Link>
             </div>
           </div>
 

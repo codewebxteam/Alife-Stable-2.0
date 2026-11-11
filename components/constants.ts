@@ -1,6 +1,7 @@
 // Centralized Asset URLs and Data Configurations for Alife Stable
 
-export const DEMO_CALENDAR_URL = "https://calendar.app.google/w8U4onynW6fhNAvo7";
+export const BECOME_PARTNER_URL = "https://superprofile.bio/vp/alife-stable-partnership";
+export const BRAND_LOGO_URL = "https://ik.imagekit.io/0s0fb4b2b/AlifeLogo.png";
 
 export const IMAGE_ASSETS = {
   // Hero marketing growth blueprint image (right side hero illustration)

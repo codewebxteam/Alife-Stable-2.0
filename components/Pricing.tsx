@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { PRICING_PLANS, DEMO_CALENDAR_URL } from "./constants";
+import { PRICING_PLANS } from "./constants";
 import { CheckIcon, ArrowRightIcon } from "./Icons";
 
 interface PricingProps {
@@ -63,15 +63,14 @@ export function Pricing({ onOpenDemo, onOpenPartner }: PricingProps) {
                 </div>
 
                 <div className="space-y-2 pt-1">
-                  <a
-                    href={DEMO_CALENDAR_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                  <button
+                    type="button"
+                    onClick={onOpenDemo}
                     className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 text-sm cursor-pointer active:scale-98"
                   >
                     Book your free demo slot
                     <ArrowRightIcon className="w-4 h-4" />
-                  </a>
+                  </button>
                 </div>
               </div>
 

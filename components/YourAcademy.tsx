@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { IMAGE_ASSETS, YOUR_ACADEMY_CHECKLIST, DEMO_CALENDAR_URL } from "./constants";
+import { IMAGE_ASSETS, YOUR_ACADEMY_CHECKLIST } from "./constants";
 import { ArrowRightIcon, CheckIcon } from "./Icons";
 
 interface YourAcademyProps {
@@ -44,15 +44,14 @@ export function YourAcademy({ onOpenDemo, onOpenPartner }: YourAcademyProps) {
             </div>
 
             <div className="pt-4">
-              <a
-                href={DEMO_CALENDAR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={onOpenDemo || onOpenPartner}
                 className="inline-flex items-center gap-2 px-7 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer text-base active:scale-98"
               >
                 Book your free demo slot
                 <ArrowRightIcon className="w-4 h-4" />
-              </a>
+              </button>
             </div>
           </div>
 

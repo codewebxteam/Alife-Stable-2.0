@@ -2,7 +2,7 @@
 
 import React from "react";
 import Image from "next/image";
-import { IMAGE_ASSETS, WHAT_IS_BENEFITS, DEMO_CALENDAR_URL } from "./constants";
+import { IMAGE_ASSETS, WHAT_IS_BENEFITS } from "./constants";
 import { ArrowRightIcon, CheckIcon } from "./Icons";
 
 interface WhatIsAlifeProps {
@@ -32,15 +32,14 @@ export function WhatIsAlife({ onOpenDemo }: WhatIsAlifeProps) {
             </p>
 
             <div className="pt-2">
-              <a
-                href={DEMO_CALENDAR_URL}
-                target="_blank"
-                rel="noopener noreferrer"
+              <button
+                type="button"
+                onClick={onOpenDemo}
                 className="inline-flex items-center gap-2.5 px-6 py-3.5 rounded-xl font-bold text-white bg-[#078765] hover:bg-[#064E43] shadow-md hover:shadow-lg transition-all duration-200 cursor-pointer"
               >
                 Book your free demo slot
                 <ArrowRightIcon className="w-4 h-4" />
-              </a>
+              </button>
             </div>
           </div>
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import Link from "next/link";
 import { doc, getDoc } from "firebase/firestore";
 import { db } from "../../../lib/firebase";
@@ -11,7 +11,6 @@ import { DemoModal } from "../../../components/DemoModal";
 import CourseHero from "../../../components/course-details/CourseHero";
 import Curriculum from "../../../components/course-details/Curriculum";
 import CourseVideoPlayer from "../../../components/CourseVideoPlayer";
-import { DEMO_CALENDAR_URL } from "../../../components/constants";
 import {
   Loader2,
   FileText,
@@ -41,6 +40,7 @@ interface CourseData {
 
 export default function CourseDetailsPage() {
   const params = useParams();
+  const router = useRouter();
   const id = Array.isArray(params?.id) ? params.id[0] : (params?.id as string);
 
   const [course, setCourse] = useState<CourseData | null>(null);
@@ -112,7 +112,7 @@ export default function CourseDetailsPage() {
   }, [course?.image, course?.mainVideoId, course?.videoId]);
 
   const handleOpenDemo = () => {
-    window.open("https://calendar.app.google/w8U4onynW6fhNAvo7", "_blank", "noopener,noreferrer");
+    router.push("/book-demo");
   };
 
   const handleOpenPartner = () => {
@@ -392,14 +392,13 @@ export default function CourseDetailsPage() {
 
                   {/* Actions (Single CTA) */}
                   <div className="pt-2">
-                    <a
-                      href={DEMO_CALENDAR_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-[#078765] hover:bg-[#064E43] shadow-md transition-all cursor-pointer text-center active:scale-98 block"
+                    <button
+                      type="button"
+                      onClick={handleOpenDemo}
+                      className="w-full py-3.5 px-4 rounded-xl font-bold text-sm text-white bg-[#078765] hover:bg-[#064E43] shadow-md transition-all cursor-pointer text-center active:scale-98"
                     >
                       Book your free demo slot
-                    </a>
+                    </button>
                   </div>
 
                   <div className="flex items-center justify-center gap-2 text-[11px] text-[#65736F] pt-1">

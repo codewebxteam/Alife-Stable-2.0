@@ -2,24 +2,11 @@ import React from "react";
 
 export function BrandLogoMark({ className = "w-8 h-8" }: { className?: string }) {
   return (
-    <svg
-      viewBox="0 0 36 36"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-      aria-hidden="true"
-    >
-      <rect width="36" height="36" rx="9" fill="#078765" />
-      <path
-        d="M18 7L8 27H13.2L15.1 23H20.9L22.8 27H28L18 7ZM16.6 19.5L18 15.6L19.4 19.5H16.6Z"
-        fill="#FFFFFF"
-      />
-      <circle cx="27" cy="9" r="3" fill="#E8F4EC" />
-      <path
-        d="M25 21C25 18 28 17 29 17C29 19.5 27.5 22 25 22V21Z"
-        fill="#E8F4EC"
-      />
-    </svg>
+    <img
+      src="https://ik.imagekit.io/0s0fb4b2b/AlifeLogo.png"
+      alt="Alife Stable Logo"
+      className={`${className} object-contain`}
+    />
   );
 }
 

@@ -4,7 +4,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { BrandLogoMark, MenuIcon, CloseIcon } from "./Icons";
-import { DEMO_CALENDAR_URL } from "./constants";
+import { BECOME_PARTNER_URL } from "./constants";
 
 interface HeaderProps {
   onOpenDemo: () => void;
@@ -81,17 +81,13 @@ export function Header({ onOpenDemo, onOpenPartner }: HeaderProps) {
           {/* Brand Logo & Name */}
           <Link
             href="/"
-            className="flex items-center gap-3 group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#078765] rounded-lg"
+            className="flex items-center group focus:outline-none focus-visible:ring-2 focus-visible:ring-[#078765] rounded-lg"
           >
-            <BrandLogoMark className="w-10 h-10 transition-transform duration-300 group-hover:scale-105" />
-            <div className="flex flex-col">
-              <span className="text-xl font-extrabold tracking-tight text-[#102B2B]">
-                Alife Stable
-              </span>
-              <span className="text-[10px] uppercase font-bold tracking-widest text-[#078765]">
-                Partner • Grow • Succeed
-              </span>
-            </div>
+            <img
+              src="https://ik.imagekit.io/0s0fb4b2b/AlifeLogo.png"
+              alt="Alife Stable Logo"
+              className="h-11 sm:h-13 md:h-15 lg:h-16 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+            />
           </Link>
 
           {/* Desktop Center Navigation with Active State Indicator */}
@@ -121,33 +117,45 @@ export function Header({ onOpenDemo, onOpenPartner }: HeaderProps) {
             })}
           </nav>
 
-          {/* Desktop Right Single CTA */}
-          <div className="hidden lg:flex items-center gap-3">
+          {/* Desktop Right CTAs */}
+          <div className="hidden lg:flex items-center gap-2.5">
+            <Link
+              href="/book-demo"
+              className="px-4 py-2 text-sm font-bold text-[#078765] bg-[#E8F4EC] hover:bg-[#078765]/15 border border-[#078765]/20 rounded-xl transition-all duration-200 cursor-pointer active:scale-95 inline-flex items-center"
+            >
+              Book Demo
+            </Link>
             <a
-              href={DEMO_CALENDAR_URL}
+              href={BECOME_PARTNER_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="px-5 py-2.5 text-sm font-bold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer active:scale-95 inline-flex items-center gap-2"
+              className="px-4.5 py-2 text-sm font-bold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer active:scale-95 inline-flex items-center"
             >
-              Book your free demo slot
+              Become Partner
             </a>
           </div>
 
-          {/* Mobile Hamburger Button */}
-          <div className="flex lg:hidden items-center gap-2">
+          {/* Mobile CTAs & Hamburger Button */}
+          <div className="flex lg:hidden items-center gap-1.5 sm:gap-2">
+            <Link
+              href="/book-demo"
+              className="hidden sm:inline-flex text-xs font-bold text-[#078765] bg-[#E8F4EC] border border-[#078765]/20 px-2.5 py-1.5 rounded-lg hover:bg-[#078765]/15 cursor-pointer"
+            >
+              Book Demo
+            </Link>
             <a
-              href={DEMO_CALENDAR_URL}
+              href={BECOME_PARTNER_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="hidden sm:inline-flex text-xs font-bold text-white bg-[#078765] px-3 py-1.5 rounded-lg hover:bg-[#064E43] shadow-xs cursor-pointer"
+              className="text-xs font-bold text-white bg-[#078765] px-2.5 py-1.5 rounded-lg hover:bg-[#064E43] shadow-xs cursor-pointer inline-flex items-center"
             >
-              Book your free demo slot
+              Become Partner
             </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               aria-label={mobileMenuOpen ? "Close navigation menu" : "Open navigation menu"}
-              className="p-2 rounded-lg text-[#102B2B] hover:bg-[#E8F4EC] transition-colors focus:outline-none focus:ring-2 focus:ring-[#078765]"
+              className="p-1.5 sm:p-2 rounded-lg text-[#102B2B] hover:bg-[#E8F4EC] transition-colors focus:outline-none focus:ring-2 focus:ring-[#078765]"
             >
               {mobileMenuOpen ? <CloseIcon /> : <MenuIcon />}
             </button>
@@ -180,16 +188,23 @@ export function Header({ onOpenDemo, onOpenPartner }: HeaderProps) {
                 );
               })}
             </nav>
-            <div className="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-2.5">
+            <div className="mt-4 pt-4 border-t border-gray-100 flex flex-col gap-2">
               <a
-                href={DEMO_CALENDAR_URL}
+                href={BECOME_PARTNER_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 onClick={() => setMobileMenuOpen(false)}
-                className="w-full py-3 text-center text-sm font-bold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl shadow-sm cursor-pointer block"
+                className="w-full py-2.5 text-center text-sm font-bold text-white bg-[#078765] hover:bg-[#064E43] rounded-xl shadow-sm cursor-pointer block"
               >
-                Book your free demo slot
+                Become Partner
               </a>
+              <Link
+                href="/book-demo"
+                onClick={() => setMobileMenuOpen(false)}
+                className="w-full py-2.5 text-center text-sm font-bold text-[#078765] bg-[#E8F4EC] hover:bg-[#078765]/15 border border-[#078765]/20 rounded-xl cursor-pointer block"
+              >
+                Book Demo
+              </Link>
             </div>
           </div>
         )}

@@ -34,6 +34,13 @@ export const metadata: Metadata = {
       "Build your own online course business with your own brand, without creating courses or requiring technical skills.",
     type: "website",
   },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    apple: "/favicon.png",
+  },
 };
 
 export default function RootLayout({

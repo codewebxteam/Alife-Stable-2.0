@@ -8,7 +8,6 @@ import {
   CheckCircle2,
   ArrowRight,
 } from "lucide-react";
-import { DEMO_CALENDAR_URL } from "../constants";
 
 interface RevenueCalculatorProps {
   onOpenPartner: () => void;
@@ -151,15 +150,14 @@ export function RevenueCalculator({
 
               {/* Action Button */}
               <div className="pt-2">
-                <a
-                  href={DEMO_CALENDAR_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
+                <button
+                  type="button"
+                  onClick={onOpenDemo}
                   className="w-full inline-flex items-center justify-center gap-2 py-3.5 px-5 rounded-xl font-bold text-[#102B2B] bg-[#FBF7EF] hover:bg-white shadow-md hover:shadow-lg transition-all duration-200 text-sm cursor-pointer active:scale-98"
                 >
                   Book your free demo slot
                   <ArrowRight className="w-4 h-4" />
-                </a>
+                </button>
               </div>
             </div>
           </div>

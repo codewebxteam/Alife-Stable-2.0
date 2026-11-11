@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Header } from "../../components/Header";
 import { LiveCoursesSection } from "../../components/LiveCoursesSection";
 import { Footer } from "../../components/Footer";
@@ -8,6 +9,7 @@ import { MobileStickyCta } from "../../components/MobileStickyCta";
 import { DemoModal } from "../../components/DemoModal";
 
 export default function CoursesPage() {
+  const router = useRouter();
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     type: "demo" | "partner";
@@ -17,7 +19,7 @@ export default function CoursesPage() {
   });
 
   const handleOpenDemo = () => {
-    window.open("https://calendar.app.google/w8U4onynW6fhNAvo7", "_blank", "noopener,noreferrer");
+    router.push("/book-demo");
   };
 
   const handleOpenPartner = () => {

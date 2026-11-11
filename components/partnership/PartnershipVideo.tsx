@@ -2,7 +2,6 @@
 
 import React from "react";
 import { ArrowRight, Play, Sparkles } from "lucide-react";
-import { DEMO_CALENDAR_URL } from "../constants";
 
 interface PartnershipVideoProps {
   onOpenDemo: () => void;
@@ -54,15 +53,14 @@ export function PartnershipVideo({ onOpenDemo, onOpenPartner }: PartnershipVideo
           </div>
 
           <div className="flex items-center gap-3 shrink-0 w-full sm:w-auto">
-            <a
-              href={DEMO_CALENDAR_URL}
-              target="_blank"
-              rel="noopener noreferrer"
+            <button
+              type="button"
+              onClick={onOpenDemo}
               className="w-full sm:w-auto inline-flex items-center justify-center gap-1.5 px-6 py-2.5 rounded-xl font-bold text-xs sm:text-sm text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer shadow-md active:scale-98"
             >
               Book your free demo slot
-              <ArrowRight className="w-3.5 h-3.5" />
-            </a>
+              <ArrowRight className="w-4 h-4" />
+            </button>
           </div>
         </div>
       </div>

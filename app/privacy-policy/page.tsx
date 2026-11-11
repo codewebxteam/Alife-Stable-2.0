@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { DemoModal } from "../../components/DemoModal";
@@ -29,6 +30,7 @@ import {
 } from "lucide-react";
 
 export default function PrivacyPolicyPage() {
+  const router = useRouter();
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     type: "demo" | "partner";
@@ -38,7 +40,7 @@ export default function PrivacyPolicyPage() {
   });
 
   const handleOpenDemo = () => {
-    window.open("https://calendar.app.google/w8U4onynW6fhNAvo7", "_blank", "noopener,noreferrer");
+    router.push("/book-demo");
   };
 
   const handleOpenPartner = () => {

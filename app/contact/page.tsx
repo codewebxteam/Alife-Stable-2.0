@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import { Header } from "../../components/Header";
 import { Footer } from "../../components/Footer";
 import { DemoModal } from "../../components/DemoModal";
@@ -12,7 +13,6 @@ import {
   ArrowRightIcon,
   CheckIcon,
 } from "../../components/Icons";
-import { DEMO_CALENDAR_URL } from "../../components/constants";
 import {
   Mail,
   Phone,
@@ -29,6 +29,7 @@ import {
 } from "lucide-react";
 
 export default function ContactPage() {
+  const router = useRouter();
   const [modalState, setModalState] = useState<{
     isOpen: boolean;
     type: "demo" | "partner";
@@ -51,7 +52,7 @@ export default function ContactPage() {
   const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleOpenDemo = () => {
-    window.open("https://calendar.app.google/w8U4onynW6fhNAvo7", "_blank", "noopener,noreferrer");
+    router.push("/book-demo");
   };
 
   const handleOpenPartner = () => {
@@ -205,14 +206,13 @@ export default function ContactPage() {
 
                   {/* Fast Action Button */}
                   <div className="pt-2 border-t border-[#078765]/15">
-                    <a
-                      href={DEMO_CALENDAR_URL}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="w-full py-2.5 px-3 rounded-xl font-bold text-xs text-center text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer shadow-sm active:scale-98 block"
+                    <button
+                      type="button"
+                      onClick={handleOpenDemo}
+                      className="w-full py-2.5 px-3 rounded-xl font-bold text-xs text-center text-white bg-[#078765] hover:bg-[#064E43] transition-all cursor-pointer shadow-sm active:scale-98"
                     >
                       Book your free demo slot
-                    </a>
+                    </button>
                   </div>
                 </div>
 
