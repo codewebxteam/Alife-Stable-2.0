@@ -22,12 +22,6 @@ export default function BookDemoPage() {
           <div className="bg-white rounded-2xl sm:rounded-3xl p-4 sm:p-7 lg:p-8 shadow-xl shadow-[#078765]/5 border border-[#078765]/15">
             <DemoBookingExperience />
           </div>
-
-          <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 text-[11px] sm:text-xs font-bold text-[#4A5D59] pb-4">
-            <span>✓ 500+ Active Partners</span>
-            <span>✓ 1,000+ Ready-to-Sell Courses</span>
-            <span>✓ 24-Hour Turnkey Academy Setup</span>
-          </div>
         </div>
       </main>
 
