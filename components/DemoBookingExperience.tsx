@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useMemo, useRef } from "react";
+import Link from "next/link";
 import { CheckIcon } from "./Icons";
 import {
   Calendar,
@@ -281,17 +282,6 @@ export function DemoBookingExperience({
     }
   };
 
-  const handleReset = () => {
-    setSubmitted(false);
-    setName("");
-    setPhone("");
-    setEmail("");
-    setSelectedSlot(null);
-    setConfirmedSlot(null);
-    setError(null);
-    if (onSuccessClose) onSuccessClose();
-  };
-
   const formatPrettyDate = (dateStr: string) => {
     const parts = dateStr.split("-").map(Number);
     if (parts.length !== 3) return dateStr;
@@ -352,13 +342,22 @@ export function DemoBookingExperience({
           <strong className="text-[#102B2B]">{phone}</strong> with your live session link.
         </p>
 
-        <button
-          type="button"
-          onClick={handleReset}
-          className="w-full py-3.5 rounded-xl font-extrabold text-white bg-[#078765] hover:bg-[#064E43] transition-colors cursor-pointer shadow-md"
-        >
-          {onSuccessClose ? "Done" : "Book Another Meeting"}
-        </button>
+        {onSuccessClose ? (
+          <button
+            type="button"
+            onClick={onSuccessClose}
+            className="w-full py-3.5 rounded-xl font-extrabold text-white bg-[#078765] hover:bg-[#064E43] transition-colors cursor-pointer shadow-md"
+          >
+            Done
+          </button>
+        ) : (
+          <Link
+            href="/"
+            className="w-full py-3.5 rounded-xl font-extrabold text-white bg-[#078765] hover:bg-[#064E43] transition-colors cursor-pointer shadow-md block text-center"
+          >
+            Back to Home
+          </Link>
+        )}
       </div>
     );
   }
