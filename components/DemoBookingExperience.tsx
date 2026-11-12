@@ -11,7 +11,6 @@ import {
   Mail,
   Phone,
   ShieldCheck,
-  Video,
   ChevronLeft,
   ChevronRight,
   Check,
@@ -382,10 +381,6 @@ export function DemoBookingExperience({
                 <Clock className="w-3 h-3" />
                 {scheduleConfig.durationMinutes} Mins
               </span>
-              <span className="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-600">
-                <Video className="w-3.5 h-3.5 text-[#078765]" />
-                Live 1-on-1 Video Walkthrough
-              </span>
             </div>
           </div>
         </div>
@@ -396,10 +391,11 @@ export function DemoBookingExperience({
         </div>
       </div>
 
-      {/* 2-Line Description About Partnership Meeting */}
+      {/* Description About Partnership Meeting */}
       <p className="text-xs sm:text-sm text-[#4A5D59] leading-relaxed font-medium bg-[#FBF7EF] px-4 py-3 rounded-2xl border border-[#078765]/15">
-        {scheduleConfig.subtitle ||
-          "Book a live 1-on-1 walkthrough to see how you can launch your own branded AI course academy in 24 hours. Our partnership specialist will guide you through platform features, pricing, and complete onboarding."}
+        {scheduleConfig.subtitle && !scheduleConfig.subtitle.includes("1-on-1") && !scheduleConfig.subtitle.includes("convenient date")
+          ? scheduleConfig.subtitle
+          : "Book your free demo and explore Alife Stable's AI Courses Partnership Program. Choose your preferred date and time!"}
       </p>
 
       {error && (
@@ -432,7 +428,7 @@ export function DemoBookingExperience({
           >
             <div className="flex items-center justify-between">
               <span className="text-[11px] font-extrabold text-[#078765] uppercase tracking-wider">
-                1. Your Contact Details
+                Your Contact Details
               </span>
               <span className="text-[10px] font-semibold text-slate-400">
                 Required *
@@ -531,7 +527,7 @@ export function DemoBookingExperience({
                 <div className="flex items-center justify-between gap-2">
                   <label className="text-[11px] font-extrabold text-[#102B2B] uppercase tracking-wider flex items-center gap-1.5">
                     <Calendar className="w-3.5 h-3.5 text-[#078765]" />
-                    2. Select Date
+                    Select Date
                   </label>
                   <div className="flex items-center gap-1.5">
                     <span className="text-[11px] font-bold text-[#078765]">
@@ -611,7 +607,7 @@ export function DemoBookingExperience({
                 <div className="flex items-center justify-between">
                   <label className="text-[11px] font-extrabold text-[#102B2B] uppercase tracking-wider flex items-center gap-1.5">
                     <Clock className="w-3.5 h-3.5 text-[#078765]" />
-                    3. Available Time Slots
+                    Available Time Slots
                   </label>
                   <span className="text-[11px] font-bold text-[#078765] bg-white px-2.5 py-0.5 rounded-full border border-[#078765]/20">
                     {availableSlotsForDay.filter((s) => s.bookedCount < s.maxCapacity).length} slots open
@@ -633,7 +629,6 @@ export function DemoBookingExperience({
                     {availableSlotsForDay.map((slot) => {
                       const isFull = slot.bookedCount >= slot.maxCapacity;
                       const isSelected = selectedSlot?.id === slot.id;
-                      const seatsLeft = Math.max(0, slot.maxCapacity - slot.bookedCount);
 
                       return (
                         <button
@@ -644,7 +639,7 @@ export function DemoBookingExperience({
                             setSelectedSlot(slot);
                             setError(null);
                           }}
-                          className={`px-3 py-2.5 rounded-xl border text-left transition-all relative ${
+                          className={`px-3 py-3 rounded-xl border text-center transition-all relative ${
                             isFull
                               ? "bg-white/50 border-slate-200 text-slate-400 cursor-not-allowed opacity-60"
                               : isSelected
@@ -652,23 +647,17 @@ export function DemoBookingExperience({
                               : "bg-white hover:bg-emerald-50 border-emerald-200/80 hover:border-[#078765] text-[#102B2B] cursor-pointer"
                           }`}
                         >
-                          <div className="flex items-center justify-between gap-1">
+                          <div className="flex items-center justify-center gap-1.5">
                             <span className="text-xs sm:text-sm font-extrabold">
                               {slot.startTime}
                             </span>
                             {isSelected && <Check className="w-3.5 h-3.5 text-white shrink-0" />}
                           </div>
-                          <div
-                            className={`text-[10px] font-semibold mt-0.5 ${
-                              isSelected
-                                ? "text-[#E8F4EC]"
-                                : isFull
-                                ? "text-rose-500"
-                                : "text-[#65736F]"
-                            }`}
-                          >
-                            {isFull ? "Slot Full" : `${seatsLeft} seats left`}
-                          </div>
+                          {isFull && (
+                            <div className="text-[10px] font-semibold mt-0.5 text-rose-500">
+                              Slot Full
+                            </div>
+                          )}
                         </button>
                       );
                     })}
